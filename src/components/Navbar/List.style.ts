@@ -10,7 +10,7 @@ display: inline-block;
     background-color: rgba(0, 0, 0, 0.3);
   }
 
-  @media (max-width:600px) {
+  @media (max-width:770px) {
     display: block;
     width: 100%;
   }

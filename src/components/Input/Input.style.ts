@@ -2,9 +2,26 @@ import styled from "styled-components";
 
 export const Heading = styled.h1`
 font-family: 'Playfair Display', serif;
-  font-size: 3.5rem;
+  font-size: 50px;
   color: #fff;
+  margin-top:8rem;
   margin-bottom: 1.5rem;
+
+  @media(max-width: 690px) {
+font-size: 45px;
+  }
+  @media(max-width: 620px) {
+    font-size: 40px;
+      }
+      @media(max-width: 550px) {
+        font-size: 37px;
+          }
+          @media(max-width: 500px) {
+            font-size: 34px;
+              }
+              @media(max-width: 450px) {
+                font-size: 30px;
+                  }
 `;
 
 export const SpanStyle = styled.span`

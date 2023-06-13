@@ -6,7 +6,7 @@ const InputShortener:React.FC = () => {
     <>
       <InputContainer>
       <Heading>SHORTENING YOUR <SpanStyle>URL?</SpanStyle></Heading>
-      <Paragraph>Sure, T2M will do that at a mouse click.</Paragraph>
+      <Paragraph>Sure, LinkZip will do that at a mouse click.</Paragraph>
       <InputDiv>
         <InputStyle
           type="text"

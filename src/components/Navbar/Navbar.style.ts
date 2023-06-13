@@ -6,9 +6,9 @@ export const NavbarStyle = styled.div`
     width: 100vw;
     background-color: #3d3d3d;
     // background: -webkit-linear-gradient(left, #a445b2, #fa4299);
-    position: sticky;
+    position: fixed;
     top: 0;
-    z-index: 999;
+    z-index: 1;
   }
 
 & .nav-header {
@@ -41,7 +41,7 @@ export const NavbarStyle = styled.div`
     display: none;
 }
 
-@media (max-width:600px) {
+@media (max-width:770px) {
    
    & .nav-btn {
       display: inline-block;

@@ -1,9 +1,9 @@
 import React from 'react'
 import { Wrapper, FormWrapper, TitleText, 
-    SlideControls, Slide1, Slide2, InputWrapper,InputStyle,
- ButtonStyle, MainWrap
+    SlideControls, Slide1, Slide2,InputStyle,
+  MainWrap
  } from '../../styled/Form.style'
- import { ButtonSignUpWrapper, Wrap, ErrorStyle } from './SignUp.style'
+ import { ButtonSignUpWrapper, Wrap, ErrorStyle, InputWrapper, ButtonStyle } from './SignUp.style'
  import { useFormik } from 'formik'
  import validationSchema from '../../constants/schema'
 
@@ -66,9 +66,12 @@ onSubmit: (values) => {
         ) : null}
           </InputWrapper>
 
+{/* <ButtonDiv> */}
           <ButtonSignUpWrapper>
             <ButtonStyle type="submit">SignUp</ButtonStyle>
           </ButtonSignUpWrapper>
+          {/* </ButtonDiv> */}
+
         </Wrapper>
         </Wrap>
         </MainWrap>
