@@ -18,9 +18,12 @@ export const NavbarStyle = styled.div`
 & .nav-title {
     display: inline-block;
   font-size: 22px;
+  font-weight: 600;
   color: #fff;
   padding: 10px 10px 10px 10px;
   margin-left:30px;
+  // margin-top:6px;
+  // margin-bottom:10px;
 }
 
 & .nav-links {
@@ -108,4 +111,10 @@ width: 80px;
         background-color: #f99f38;
         color: #fff;
     }
+`;
+
+export const Image = styled.img`
+height:35px;
+width:35px;
+margin-right: 15px;
 `;

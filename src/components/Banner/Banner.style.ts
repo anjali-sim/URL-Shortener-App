@@ -1,13 +1,11 @@
 import styled from "styled-components";
 
 const BannerStyle = styled.div`
-height: 80vh;
+width:100%;
+height: 50vh;
 display: flex;
-// flex-direction: column;
 align-items: center;
-justify-content: center;
-// position:fixed;
-// background-color: 
+justify-content: center; 
 `;
 
 export default BannerStyle;

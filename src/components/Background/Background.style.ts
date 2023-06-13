@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const BackgroundStyle = styled.div`
-position: fixed;
+position: relative;
   width: 100%;
   height: 500px;
   top: 0;

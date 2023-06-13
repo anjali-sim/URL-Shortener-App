@@ -49,7 +49,7 @@ const Footer:React.FC = () => {
            <Icons href="#"><SocialIcon url="https://twitter.com/" network="twitter" bgColor="white" /></Icons>
            <Icons href="#"><SocialIcon url="https://youtube.com/" network="youtube" bgColor="white" /></Icons>
             <Paragraph>
-                ABC &copy; 2023, ALL Rights Reserved.
+                LinkZip &copy; 2023, ALL Rights Reserved.
             </Paragraph>
         </IconsDiv>
     </FooterDiv>

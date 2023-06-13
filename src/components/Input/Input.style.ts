@@ -13,10 +13,10 @@ color: #f99f38;
 
 export const InputContainer = styled.div`
 display: flex;
+position:absolute;
 flex-direction: column;
 align-items:center;
 width:100%;
-margin-top: -200px;
 margin-bottom: 2rem;
 `;
 

@@ -1,6 +1,6 @@
 import React from 'react'
 import './App.css'
-import MainPage from './pages/MainPage/MainPage'
+import MainPage from './pages/Main/MainPage'
 
 const App:React.FC = () => {
 
