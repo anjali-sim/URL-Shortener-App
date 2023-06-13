@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 const ListStyle = styled.a`
-display: inline-block;
+  display: inline-block;
   padding: 13px 10px 13px 10px;
   text-decoration: none;
   color: #efefef;

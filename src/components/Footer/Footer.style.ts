@@ -43,7 +43,6 @@ border: 0;
 `;
 
 export const SubmitStyle = styled.input.attrs({type: "submit"})`
-// background-color: #f99f38;
 background: -webkit-linear-gradient(left, #a445b2, #fa4299);
   color: #fff;
   cursor: pointer;
@@ -51,8 +50,6 @@ background: -webkit-linear-gradient(left, #a445b2, #fa4299);
   padding: 0.625rem 0.9375rem;
   margin-top: 0.3125rem;
 `;
-
-
 
 export const FooterDiv = styled.section`
     width: 100%;

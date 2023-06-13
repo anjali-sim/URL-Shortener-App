@@ -6,11 +6,10 @@ import Background from '../Background/Background'
 const Banner:React.FC = () => {
   return (
     <>
-       <BannerStyle>
-
-    <InputShortener />
-    <Background />
-       </BannerStyle>
+      <BannerStyle>
+        <InputShortener />
+        <Background />
+      </BannerStyle>
     </>
   )
 }

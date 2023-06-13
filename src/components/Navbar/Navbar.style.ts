@@ -5,8 +5,7 @@ export const NavbarStyle = styled.div`
     height: 60px;
     width: 100vw;
     background-color: #3d3d3d;
-    // background: -webkit-linear-gradient(left, #a445b2, #fa4299);
-    position: fixed;
+    position: relative;
     top: 0;
     z-index: 1;
   }
@@ -22,8 +21,6 @@ export const NavbarStyle = styled.div`
   color: #fff;
   padding: 10px 10px 10px 10px;
   margin-left:30px;
-  // margin-top:6px;
-  // margin-bottom:10px;
 }
 
 & .nav-links {
@@ -49,21 +46,25 @@ export const NavbarStyle = styled.div`
       right: 0px;
       top: 0px;
     }
+    
     & .nav-btn > label {
       display: inline-block;
       width: 50px;
       height: 50px;
       padding: 13px;
     }
+
     & .nav-btn > label:hover,.nav  #nav-check:checked ~ .nav-btn > label {
       background-color: rgba(0, 0, 0, 0.3);
     }
+
     span {
       display: block;
       width: 25px;
       height: 10px;
       border-top: 2px solid #eee;
     }
+
     & .nav-links {
       position: absolute;
       display: block;
@@ -79,6 +80,7 @@ export const NavbarStyle = styled.div`
     #nav-check:not(:checked) ~ .nav-links {
       height: 0px;
     }
+
     #nav-check:checked ~ .nav-links {
       height: calc(100vh - 50px);
       overflow-y: auto;
@@ -87,36 +89,29 @@ export const NavbarStyle = styled.div`
 `;
 
 export const Button = styled.button`
-cursor: pointer;
-width: 80px;
-//   outline: none;
-//   position: relative;
-        // z-index: 3;
-        background: transparent;
-        text-align:center;
-        color: #a445b2;
-        font-size: 15px;
-        font-weight: 600;
-        // border-color: #a445b2;
-        border-image: linear-gradient(to right, #a445b2, #fa4299) 1;
-        border-style: solid;
-        border-width: 2px;
-        border-radius: 10px;
-        padding: 10px 10px;
-        margin-top: 10px;
-        margin-right:18px;
-        text-transform: uppercase;
-        transition: all 0.2s linear;
+  cursor: pointer;
+  width: 80px;
+  background: transparent;
+  text-align:center;
+  color: #a445b2;
+  font-size: 15px;
+  font-weight: 600;
+  border-image: linear-gradient(to right, #a445b2, #fa4299) 1;
+  border-style: solid;
+  padding: 10px 10px;
+  margin-top: 10px;
+  margin-right:18px;
+  text-transform: uppercase;
+  transition: all 0.2s linear;
 
-    &:hover {
-        // background-color: #a445b2;
-        background: -webkit-linear-gradient(left, #a445b2, #fa4299);
-        color: #fff;
-    }
+  &:hover {
+    background: -webkit-linear-gradient(left, #a445b2, #fa4299);
+    color: #fff;
+  }
 `;
 
 export const Image = styled.img`
-height:35px;
-width:90px;
-margin-right: 15px;
+  height:35px;
+  width:90px;
+  margin-right: 15px;
 `;

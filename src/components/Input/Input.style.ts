@@ -1,44 +1,43 @@
 import styled from "styled-components";
 
 export const Heading = styled.h1`
-font-family: 'Playfair Display', serif;
+  font-family: 'Playfair Display', serif;
   font-size: 50px;
   color: #fff;
   margin-top:8rem;
   margin-bottom: 1.5rem;
 
   @media(max-width: 690px) {
-font-size: 45px;
+    font-size: 45px;
   }
   @media(max-width: 620px) {
     font-size: 40px;
-      }
-      @media(max-width: 550px) {
-        font-size: 37px;
-          }
-          @media(max-width: 500px) {
-            font-size: 34px;
-              }
-              @media(max-width: 450px) {
-                font-size: 30px;
-                  }
+  }
+  @media(max-width: 550px) {
+    font-size: 37px;
+  }
+  @media(max-width: 500px) {
+    font-size: 34px;
+  }
+  @media(max-width: 450px) {
+    font-size: 30px;
+  }
 `;
 
 export const SpanStyle = styled.span`
-color: #f99f38;
+  color: #f99f38;
 `;
 
 export const InputContainer = styled.div`
-display: flex;
-position:absolute;
-flex-direction: column;
-align-items:center;
-width:100%;
-margin-bottom: 2rem;
+  display: flex;
+  position:absolute;
+  flex-direction: column;
+  align-items:center;
+  margin-bottom: 2rem;
 `;
 
 export const InputStyle = styled.input`
-width: 100%;
+  width: 100%;
   padding: 0.5rem 0.2rem 0.5rem 0;
   text-indent: 1rem;
   border: none;
@@ -53,7 +52,7 @@ width: 100%;
 `;
 
 export const ButtonStyle = styled.button`
-padding: 0 1rem;
+  padding: 0 1rem;
   height: 3rem;
   font-size: 0.8rem;
   text-transform: uppercase;
@@ -67,13 +66,13 @@ padding: 0 1rem;
 `;
 
 export const InputDiv = styled.div`
-display:flex;
-margin-top: 10px;
-margin-bottom:10px;
-width:50%;
+  display:flex;
+  margin-top: 10px;
+  margin-bottom:10px;
+  width:50%;
 `;
 
 export const Paragraph = styled.p`
-color: #fff;
-font-size: 18px;
+  color: #fff;
+  font-size: 18px;
 `;

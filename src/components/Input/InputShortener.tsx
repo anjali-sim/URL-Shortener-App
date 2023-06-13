@@ -5,16 +5,16 @@ const InputShortener:React.FC = () => {
   return (
     <>
       <InputContainer>
-      <Heading>SHORTENING YOUR <SpanStyle>URL?</SpanStyle></Heading>
-      <Paragraph>Sure, LinkZip will do that at a mouse click.</Paragraph>
-      <InputDiv>
-        <InputStyle
+        <Heading>SHORTENING YOUR <SpanStyle>URL?</SpanStyle></Heading>
+        <Paragraph>Sure, LinkZip will do that at a mouse click.</Paragraph>
+        <InputDiv>
+          <InputStyle
           type="text"
           placeholder="Paste a link to shorten it"
-        />
-        <ButtonStyle>shorten</ButtonStyle>
-      </InputDiv>
-    </InputContainer>
+          />
+          <ButtonStyle>shorten</ButtonStyle>
+        </InputDiv>
+      </InputContainer>
     </>
   )
 }
