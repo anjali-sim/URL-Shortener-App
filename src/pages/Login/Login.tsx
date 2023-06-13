@@ -1,8 +1,9 @@
 import React from 'react'
 import { Wrapper, FormWrapper, TitleText, 
     SlideControls, Slide1, Slide2, InputWrapper,InputStyle,
-    TextStyle, ButtonWrapper, ButtonStyle, Wrap, MainDiv, SignUpDiv, MainWrap
+    ButtonStyle, MainDiv, SignUpDiv, MainWrap
  } from '../../styled/Form.style'
+ import { ButtonWrapper, TextStyle, Wrap } from './Login.style'
 
 const Login:React.FC = () => {
   return (
