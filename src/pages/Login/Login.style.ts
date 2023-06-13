@@ -20,6 +20,11 @@ background-color: #fff;
 padding: 20px;
 border-radius: 5px;
 box-shadow: 0px 15px 20px rgba(0, 0, 0, 0.1);
+
+
+// @media(max-width: 500px) {
+//         width: 300px;
+// }
 `;
 
 export const TextStyle = styled.p`

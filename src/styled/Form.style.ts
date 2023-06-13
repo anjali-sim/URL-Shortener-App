@@ -44,6 +44,24 @@ height: 50px;
   &:focus::placeholder {
     color: #b3b3b3;
   }
+
+  @media(max-width: 500px) {
+    width: 330px;
+    margin-left: 20px;
+    height: 48px;
+  }
+
+  @media(max-width: 410px) {
+    width: 300px;
+    margin-left: 37px;
+    height:45px;
+  }
+  @media(max-width: 370px) {
+    width: 270px;
+    margin-left: 50px;
+    height:40px;
+    padding-left:8px;
+  }
 `;
 
 export const InputWrapper = styled.div`
@@ -80,6 +98,21 @@ export const SlideControls = styled.div`
   margin: 30px 0 0 10px;
   justify-content: space-between;
   border: none;
+
+  @media(max-width: 500px) {
+    width:85%;
+    margin-left: 28px;
+  }
+  @media(max-width: 410px) {
+    width:78%;
+    margin-left: 43px;
+  }
+  @media(max-width: 370px) {
+    width:65%;
+    margin-left: 60px;
+    height: 45px;
+    margin-top: 20px;
+  }
 `;
 
 export const Slide1 = styled.button`
@@ -127,7 +160,6 @@ text-decoration:none;
 export const ButtonStyle = styled.button.attrs({type: "submit"})`
 height: 50px;
 width:370px;
-// width: 90%;
 margin-left:10px;
 background: -webkit-linear-gradient(left, #a445b2, #fa4299);
 border-radius: 5px;
@@ -138,5 +170,4 @@ border-radius: 5px;
 font-size: 20px;
 font-weight: 500;
 cursor: pointer;
-// position: absolute;
 `;
