@@ -3,8 +3,10 @@ import { createGlobalStyle } from "styled-components";
 const GlobalStyle = createGlobalStyle`
     body {
         display: grid;
-        height: 100%;
-        width: 100%;
+        // justify-content: center;
+        // align-items:center;
+        height: 100vh;
+        width: 100vw;
         place-items: center;
         font-family: 'Poppins', sans-serif;
         margin: 0;

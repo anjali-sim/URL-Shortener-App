@@ -44,7 +44,7 @@ padding: 0 1rem;
   border-top-right-radius: 3px;
   border-bottom-right-radius: 3px;
   color: #fff;
-  background-color: #f99f38;
+  background-color: #3d3d3d;
   border: none;
   cursor: pointer;
 `;

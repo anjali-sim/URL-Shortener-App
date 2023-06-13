@@ -1,7 +1,7 @@
 import React from 'react'
 import {Button, NavbarStyle, Image} from './Navbar.style';
 import ListStyle from './List.style';
-import logo from "../../assets/url.png"
+import logo from "../../assets/images/Screenshot from 2023-06-13 12-12-25.png"
 
 const Navbar:React.FC = () => {
   return (
@@ -12,7 +12,7 @@ const Navbar:React.FC = () => {
   <div className="nav-header">
     <div className="nav-title">
       <Image src={logo} alt="Logo" />
-      LinkZip
+      {/* LinkZip */}
     </div>
   </div>
   <div className="nav-btn">

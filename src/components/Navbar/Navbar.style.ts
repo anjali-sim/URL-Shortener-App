@@ -4,8 +4,8 @@ export const NavbarStyle = styled.div`
 & .nav {
     height: 60px;
     width: 100vw;
-    background-color: #4d4d4d;
-    
+    background-color: #3d3d3d;
+    // background: -webkit-linear-gradient(left, #a445b2, #fa4299);
     position: sticky;
     top: 0;
     z-index: 999;
@@ -94,10 +94,11 @@ width: 80px;
         // z-index: 3;
         background: transparent;
         text-align:center;
-        color: #f99f38;
+        color: #a445b2;
         font-size: 15px;
         font-weight: 600;
-        border-color: #f99f38;
+        // border-color: #a445b2;
+        border-image: linear-gradient(to right, #a445b2, #fa4299) 1;
         border-style: solid;
         border-width: 2px;
         border-radius: 10px;
@@ -108,13 +109,14 @@ width: 80px;
         transition: all 0.2s linear;
 
     &:hover {
-        background-color: #f99f38;
+        // background-color: #a445b2;
+        background: -webkit-linear-gradient(left, #a445b2, #fa4299);
         color: #fff;
     }
 `;
 
 export const Image = styled.img`
 height:35px;
-width:35px;
+width:90px;
 margin-right: 15px;
 `;

@@ -43,7 +43,8 @@ border: 0;
 `;
 
 export const SubmitStyle = styled.input.attrs({type: "submit"})`
-background-color: #f99f38;
+// background-color: #f99f38;
+background: -webkit-linear-gradient(left, #a445b2, #fa4299);
   color: #fff;
   cursor: pointer;
   border: 0;
@@ -57,7 +58,8 @@ export const FooterDiv = styled.section`
     width: 100%;
     height: 150px;
     // background-color: #263238;
-    background-color: #2C3E50;
+    // background-color: #2C3E50;
+    background-color: #3d3d3d;
     text-align: center;
     color: #f4f4f4;
 `;
