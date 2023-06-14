@@ -14,11 +14,13 @@
     "eslint-plugin-import": "^2.27.5",
     "eslint-plugin-jsx-a11y": "^6.7.1",
     "eslint-plugin-react": "^7.32.2",
+    "firebase": "^9.22.2",
     "formik": "^2.4.1",
     "path": "^0.12.7",
     "prettier": "^2.8.8",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-router-dom": "^6.12.1",
     "react-social-icons": "^5.15.0",
     "styled-components": "^6.0.0-rc.3",
     "yup": "^1.2.0"
