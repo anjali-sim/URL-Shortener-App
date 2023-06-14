@@ -9,6 +9,7 @@ position: relative;
   margin: 0;
   padding: 0;
   background: -webkit-linear-gradient(left, #a445b2, #fa4299);
+  opacity: 0.92;
   z-index: -1;
 `;
  

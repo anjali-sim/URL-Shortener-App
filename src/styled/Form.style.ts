@@ -11,7 +11,8 @@ export const MainWrap = styled.div`
   margin: 0;
   padding: 0;
   background: -webkit-linear-gradient(left, #a445b2, #fa4299);  
-`;
+  opacity: 0.92;
+  `;
 
 export const Wrapper = styled.div`
   display:flex;
@@ -142,10 +143,16 @@ export const Slide1 = styled.button`
   cursor: pointer;
   border:none;
   border-radius:5px 0px 0px 5px;
+  text-decoration:none;
+  text-align:center;
   z-index: 1;
   background: -webkit-linear-gradient(left, #a445b2, #fa4299);
   transition: all 0.6s ease;
 
+  &:hover {
+    background: -webkit-linear-gradient(left, #73307d, #d70669);
+    // background: -webkit-linear-gradient(left, #62296b, #b9055a);
+  }
 `;
 
 export const Slide2 = styled.button`
@@ -157,18 +164,18 @@ export const Slide2 = styled.button`
   padding:0px;
   line-height: 48px;
   cursor: pointer;
+  text-decoration:none;
+  text-align:center;
   border:none;
   border-radius:0px 5px 5px 0px;
   z-index: 1;
   background: -webkit-linear-gradient(left, #a445b2, #fa4299);
   transition: all 0.6s ease;
+
+  &:hover {
+    background: -webkit-linear-gradient(left, #73307d, #d70669);
+    // background: -webkit-linear-gradient(left, #62296b, #b9055a);
+  }
 `;
 
-export const SignUpDiv = styled.span`
-color:#fa4299;
-text-decoration:none;
 
-&:hover {
-    text-decoration:underline;
-}
-`;

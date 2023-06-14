@@ -103,6 +103,7 @@ export const Button = styled.button`
   margin-right:18px;
   text-transform: uppercase;
   transition: all 0.2s linear;
+  text-decoration:none;
 
   &:hover {
     background: -webkit-linear-gradient(left, #a445b2, #fa4299);
@@ -112,6 +113,7 @@ export const Button = styled.button`
 
 export const Image = styled.img`
   height:35px;
-  width:90px;
+  width:100px;
   margin-right: 15px;
+  margin-top: 3px;
 `;

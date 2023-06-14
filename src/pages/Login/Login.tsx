@@ -1,9 +1,10 @@
 import React from 'react'
 import { Wrapper, FormWrapper, TitleText, 
     SlideControls, Slide1, Slide2, InputWrapper,InputStyle,
- MainDiv, SignUpDiv, MainWrap
+ MainDiv, MainWrap
  } from '../../styled/Form.style'
- import { ButtonWrapper, TextStyle, Wrap, ButtonStyle } from './Login.style'
+ import { ButtonWrapper, TextStyle, Wrap, ButtonStyle, SignUpDiv } from './Login.style'
+import { Link } from 'react-router-dom'
 
 const Login:React.FC = () => {
   return (
@@ -20,9 +21,9 @@ const Login:React.FC = () => {
 
           {/* <FormContainer> */}
             <SlideControls>
-              <Slide1>Login</Slide1>
+              <Slide1 as={Link} to="/login">Login</Slide1>
               
-              <Slide2>Signup</Slide2>
+              <Slide2 as={Link} to="/signup">Signup</Slide2>
             </SlideControls>
           {/* </FormContainer> */}
 

@@ -7,14 +7,14 @@ export const InputWrapper = styled.div`
 `;
 
 export const ButtonSignUpWrapper = styled.div`
-display:flex;
-justify-content:center;
-height: 50px;
-width: 100%;
-margin-top: 20px;
-border-radius: 5px;
-margin-left: 0px;
-overflow: hidden;
+  display:flex;
+  justify-content:center;
+  height: 50px;
+  width: 100%;
+  margin-top: 20px;
+  border-radius: 5px;
+  margin-left: 0px;
+  overflow: hidden;
 `;
 
 export const ButtonStyle = styled.button.attrs({type: "submit"})`

@@ -6,6 +6,7 @@ import { Wrapper, FormWrapper, TitleText,
  import { ButtonSignUpWrapper, Wrap, ErrorStyle, InputWrapper, ButtonStyle } from './SignUp.style'
  import { useFormik } from 'formik'
  import validationSchema from '../../constants/schema'
+ import { Link } from 'react-router-dom'
 
 const SignUp:React.FC = () => {
 
@@ -37,8 +38,8 @@ onSubmit: (values) => {
 
           {/* <FormContainer> */}
             <SlideControls>
-              <Slide1>Login</Slide1>
-              <Slide2>Signup</Slide2>
+              <Slide1 as={Link} to="/login">Login</Slide1>
+              <Slide2 as={Link} to="/signup">Signup</Slide2>
             </SlideControls>
           {/* </FormContainer> */}
 
