@@ -1,7 +1,7 @@
 import * as Yup from 'yup';
 import * as validationMessages from './validationMessages'
 
-const validationSchema = Yup.object({
+const signupValidationSchema = Yup.object({
     name: Yup.string()
     .required(validationMessages.NAME_REQUIRED)
     .min(5, validationMessages.NAME_MIN_LENGTH),
@@ -19,4 +19,4 @@ const validationSchema = Yup.object({
     .required(validationMessages.CONFIRM_PASSWORD_REQUIRED),
 });
 
-export default validationSchema;
+export default signupValidationSchema;

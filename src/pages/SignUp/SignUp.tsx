@@ -3,7 +3,7 @@ import { Wrapper, FormWrapper, TitleText, SlideControls, Slide1, Slide2, InputSt
 import { ButtonSignUpWrapper, Wrap, InputWrapper, ButtonStyle } from './SignUp.style';
 import { ErrorStyle } from '../../styled/Error.style';
 import { useFormik } from 'formik';
-import validationSchema from '../../constants/schema';
+import signupValidationSchema from '../../constants/signupSchema';
 import { Link } from 'react-router-dom';
 import { auth } from '../../utils/firebase';
 import { createUserWithEmailAndPassword } from 'firebase/auth';
@@ -25,7 +25,7 @@ const SignUp: React.FC = () => {
       password: '',
       repassword: '',
     },
-    validationSchema: validationSchema,
+    validationSchema: signupValidationSchema,
     onSubmit: async (values) => {
       try {
         const userCredential = await createUserWithEmailAndPassword(auth, values.email, values.password);
@@ -39,7 +39,8 @@ const SignUp: React.FC = () => {
       } catch (error) {
         if (error.code === 'auth/email-already-in-use') {
           // Handle the case when the email address is already in use
-          console.log('Email is already registered.');
+          // console.log('Email is already registered.');
+          alert("Email is already registered.")
         } else {
           // Handle other errors
           console.log(error);

@@ -6,13 +6,7 @@ import { auth } from '../../utils/firebase';
 import { signInWithEmailAndPassword } from 'firebase/auth';
 import { ErrorStyle } from '../../styled/Error.style';
 import { useFormik } from 'formik';
-import validationSchema from '../../constants/schema';
-// import * as yup from 'yup';
-
-// const validationSchema = yup.object().shape({
-//   email: yup.string().email('Invalid email address').required('Email is required'),
-//   password: yup.string().required('Password is required'),
-// });
+import loginValidationSchema from '../../constants/loginSchema';
 
   const Login: React.FC = () => {
   const [error, setError] = useState<string>('');
@@ -24,13 +18,15 @@ import validationSchema from '../../constants/schema';
       email: '',
       password: '',
     },
-    validationSchema: validationSchema,
+    validationSchema: loginValidationSchema,
     onSubmit: (values) => {
       setError('');
 
       signInWithEmailAndPassword(auth, values.email, values.password)
         .then((userCredential) => {
-          navigate('/home');
+          console.log(userCredential);
+          
+          navigate('/');
         })
         .catch((error) => {
           setError(error.message);
@@ -84,7 +80,7 @@ import validationSchema from '../../constants/schema';
               </InputWrapper>
 
               <ButtonWrapper>
-                <ButtonStyle type="submit" disabled={formik.isSubmitting}>
+                <ButtonStyle type="submit">
                   Login
                 </ButtonStyle>
               </ButtonWrapper>
@@ -101,7 +97,3 @@ import validationSchema from '../../constants/schema';
 };
 
 export default Login;
-
-
-
-

@@ -1,16 +1,35 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Wrapper, FormWrapper, InputWrapper, InputStyle, MainWrap, MainDiv } from '../../styled/Form.style';
 import { Wrap, ButtonWrapper, ButtonStyle, SignUpDiv, TitleText } from './ForgotPassword.style';
-// import { ErrorStyle } from '../../styled/Error.style';
+import { ErrorStyle } from '../../styled/Error.style';
 import { Link } from 'react-router-dom';
+import { sendPasswordResetEmail } from 'firebase/auth';
+import {auth} from "../../utils/firebase"
+import { useFormik } from 'formik';
 // import { Formik } from 'formik';
 
 
 const ForgotPassword:React.FC = () => {
+
+    const [email, setEmail] = useState('');
+    const formik = useFormik({
+      initialValues: {
+        email: '',
+      },
+      onSubmit: async (values) => {
+        try {
+          await sendPasswordResetEmail(auth, values.email);
+          console.log('Password reset email sent successfully!');
+        } catch (error) {
+          console.log(error);
+        }
+      },
+    });
+
   return (
     <div>
       {/* <form onSubmit={formik.handleSubmit}> */}
-      <form>
+      <form onSubmit={formik.handleSubmit}>
         <MainWrap>
           <Wrap>
             <Wrapper>
@@ -25,11 +44,13 @@ const ForgotPassword:React.FC = () => {
                   type="email"
                   id="email"
                   placeholder="Your email"
-                //   {...formik.getFieldProps('email')}
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  {...formik.getFieldProps('email')}
                 />
-                {/* {formik.touched.email && formik.errors.email && (
+                {formik.touched.email && formik.errors.email && (
                   <ErrorStyle>{formik.errors.email}</ErrorStyle>
-                )} */}
+                )}
 
               </InputWrapper>
 
