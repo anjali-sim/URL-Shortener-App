@@ -59,6 +59,10 @@ export const FooterDiv = styled.section`
     background-color: #3d3d3d;
     text-align: center;
     color: #f4f4f4;
+
+    @media(max-width: 335px) {
+      height: 180px;
+    }
 `;
 
 export const IconsDiv = styled.div`
@@ -70,9 +74,18 @@ text-decoration: none;
     font-size: 2rem;
     margin: 0.5rem;
     color: #f4f4f4;
+
+   
 `;
 
 export const Paragraph = styled.p`
 font-size: 20px;
     margin-top: 30px;
+
+    @media(max-width: 500px) {
+      font-size: 18px;
+    }
+    @media(max-width: 310px) {
+      font-size: 16px;
+    }
 `;

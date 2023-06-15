@@ -22,6 +22,12 @@ export const Heading = styled.h1`
   @media(max-width: 450px) {
     font-size: 30px;
   }
+  @media(max-width: 390px) {
+    font-size: 28px;
+  }
+  @media(max-width: 360px) {
+    font-size: 25px;
+  }
 `;
 
 export const SpanStyle = styled.span`
@@ -49,6 +55,10 @@ export const InputStyle = styled.input`
   ::placeholder {
     font-size: 0.9rem;
   }
+
+  @media(max-width: 500px) {
+    padding: 0.2rem 0.1rem 0.2rem 0;
+  }
 `;
 
 export const ButtonStyle = styled.button`
@@ -70,9 +80,15 @@ export const InputDiv = styled.div`
   margin-top: 10px;
   margin-bottom:10px;
   width:50%;
+
+
 `;
 
 export const Paragraph = styled.p`
   color: #fff;
   font-size: 18px;
+
+  @media(max-width: 400px) {
+    font-size: 16px;
+  }
 `;

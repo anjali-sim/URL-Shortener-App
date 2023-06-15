@@ -15,7 +15,7 @@ export const Wrap = styled.div`
   align-items: center;
   overflow: hidden;
   width: 390px;
-  height: 500px;
+  height: 300px;
   background-color: #fff;
   padding: 20px;
   border-radius: 5px;
@@ -26,28 +26,28 @@ export const Wrap = styled.div`
   }
   @media(max-width: 410px) {
     width: 310px;
-    height: 480px;
+    height: 300px;
   }
   @media(max-width: 370px) {
     width: 280px;
-    height: 460px;
+    height: 300px;
   }
   @media(max-width: 330px) {
     width: 260px;
   }
   @media(max-width: 310px) {
     width: 240px;
+    height: 280px;
   }
   @media(max-width: 290px) {
     width: 230px;
   }
 `;
 
-export const TextStyle = styled.button`
+export const TextStyle = styled.p`
+  margin-top:5px;
+  margin-left:5px;
   color: #fa4299;
-  border:none;
-  background-color: #fff;
-  font-size:16px;
   text-decoration: none;
 
   &:hover {
@@ -61,10 +61,11 @@ export const TextStyle = styled.button`
 
 export const ButtonStyle = styled.button.attrs({type: "submit"})`
   height: 50px;
-  padding: 10px 150px;
+  padding: 10px 100px;
   margin-left:20px;
   background: -webkit-linear-gradient(left, #a445b2, #fa4299);
   border-radius: 5px;
+  // transition: all 3s ease-in;
   border: none;
   color: #fff;
   border-radius: 5px;
@@ -73,27 +74,28 @@ export const ButtonStyle = styled.button.attrs({type: "submit"})`
   cursor: pointer;
 
   @media(max-width: 500px) {
-    padding: 10px 130px;
+    padding: 10px 85px;
   }
   @media(max-width: 410px) {
-    padding: 8px 120px;
+    padding: 8px 70px;
     height:46px;
     margin-left: 15px;
   }
   @media(max-width: 370px) {
-    padding: 10px 100px;
+    padding: 10px 60px;
     height:43px;
     margin-left: 20px;
+    font-size:18px;
   }
   @media(max-width: 330px) {
-    padding: 10px 90px;
+    padding: 10px 50px;
     height:40px;
     margin-left: 25px;
   }
   @media(max-width: 310px) {
-    padding: 10px 90px;
+    padding: 10px 40px;
     height:38px;
-    margin-left: 19px;
+    margin-left: 25px;
   }
 `;
 
@@ -107,4 +109,22 @@ export const SignUpDiv = styled.button`
   &:hover {
     text-decoration:underline;
  }
+`;
+
+export const TitleText = styled.div`
+  display: flex;
+  justify-content:center;
+  width: 50%;
+  font-size: 30px;
+  font-weight: 600;
+
+  @media(max-width: 410px) {
+    font-size: 26px;
+  }
+  @media(max-width: 370px) {
+    font-size: 24px;
+  }
+  @media(max-width: 330px) {
+    font-size: 23px;
+  }
 `;

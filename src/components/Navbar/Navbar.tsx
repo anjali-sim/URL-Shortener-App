@@ -1,6 +1,5 @@
 import React from 'react'
-import {Button, NavbarStyle, Image} from './Navbar.style';
-import ListStyle from './List.style';
+import {Button, NavbarStyle, Image, ListStyle} from './Navbar.style';
 import logo from "../../assets/images/Screenshot from 2023-06-13 12-12-25.png"
 
 import { Link } from 'react-router-dom';
@@ -30,8 +29,8 @@ const Navbar:React.FC = () => {
             <ListStyle>About</ListStyle>
             <ListStyle>Contact</ListStyle>
             <ListStyle>Features & Pricing</ListStyle>
-            <Button as={Link} to="/login">Login</Button>
-            <Button as={Link} to="/signup">SignUp</Button>
+            <ListStyle><Button as={Link} to="/login">Login</Button></ListStyle>
+            <ListStyle><Button as={Link} to="/signup">SignUp</Button></ListStyle>
           </div>
         </div>
       </NavbarStyle>

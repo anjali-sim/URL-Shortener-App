@@ -1,51 +1,107 @@
-import React from 'react'
-import { Wrapper, FormWrapper, TitleText, 
-    SlideControls, Slide1, Slide2, InputWrapper,InputStyle,
- MainDiv, MainWrap
- } from '../../styled/Form.style'
- import { ButtonWrapper, TextStyle, Wrap, ButtonStyle, SignUpDiv } from './Login.style'
-import { Link } from 'react-router-dom'
+import React, { useState } from 'react';
+import { Wrapper, FormWrapper, TitleText, SlideControls, Slide1, Slide2, InputWrapper, InputStyle, MainDiv, MainWrap } from '../../styled/Form.style';
+import { ButtonWrapper, TextStyle, Wrap, ButtonStyle, SignUpDiv } from './Login.style';
+import { Link, useNavigate } from 'react-router-dom';
+import { auth } from '../../utils/firebase';
+import { signInWithEmailAndPassword } from 'firebase/auth';
+import { ErrorStyle } from '../../styled/Error.style';
+import { useFormik } from 'formik';
+import validationSchema from '../../constants/schema';
+// import * as yup from 'yup';
 
-const Login:React.FC = () => {
+// const validationSchema = yup.object().shape({
+//   email: yup.string().email('Invalid email address').required('Email is required'),
+//   password: yup.string().required('Password is required'),
+// });
+
+  const Login: React.FC = () => {
+  const [error, setError] = useState<string>('');
+
+  const navigate = useNavigate();
+
+  const formik = useFormik({
+    initialValues: {
+      email: '',
+      password: '',
+    },
+    validationSchema: validationSchema,
+    onSubmit: (values) => {
+      setError('');
+
+      signInWithEmailAndPassword(auth, values.email, values.password)
+        .then((userCredential) => {
+          navigate('/home');
+        })
+        .catch((error) => {
+          setError(error.message);
+        });
+    },
+  });
+
   return (
     <div>
-       {/* <form> */}
+      <form onSubmit={formik.handleSubmit}>
         <MainWrap>
-        <Wrap>
-        <Wrapper>
-          <FormWrapper>
-            <TitleText>
-              <div className="title login">Login Form</div>
-            </TitleText>
-          </FormWrapper>
+          <Wrap>
+            <Wrapper>
+              <FormWrapper>
+                <TitleText>
+                  <div className="title login">Login Form</div>
+                </TitleText>
+              </FormWrapper>
 
-          {/* <FormContainer> */}
-            <SlideControls>
-              <Slide1 as={Link} to="/login">Login</Slide1>
-              
-              <Slide2 as={Link} to="/signup">Signup</Slide2>
-            </SlideControls>
-          {/* </FormContainer> */}
+              <SlideControls>
+                <Slide1 as={Link} to="/login">
+                  Login
+                </Slide1>
+                <Slide2 as={Link} to="/signup">
+                  Signup
+                </Slide2>
+              </SlideControls>
 
-          <InputWrapper>
-            <InputStyle type="email" id="email" placeholder="Email Address" />
-            <InputStyle type="password" id="password" placeholder="Password" />
-            <TextStyle>Forgot Password?</TextStyle>
-          </InputWrapper>
+              <InputWrapper>
+                <InputStyle
+                  type="email"
+                  id="email"
+                  placeholder="Email Address"
+                  {...formik.getFieldProps('email')}
+                />
+                {formik.touched.email && formik.errors.email && (
+                  <ErrorStyle>{formik.errors.email}</ErrorStyle>
+                )}
 
-          <ButtonWrapper>
-            <ButtonStyle type="submit"> Login</ButtonStyle>
-          </ButtonWrapper>
+                <InputStyle
+                  type="password"
+                  id="password"
+                  placeholder="Password"
+                  {...formik.getFieldProps('password')}
+                />
+                {formik.touched.password && formik.errors.password && (
+                  <ErrorStyle>{formik.errors.password}</ErrorStyle>
+                )}
 
-          <MainDiv>
-            Not a member? <SignUpDiv>Signup Now</SignUpDiv>
-          </MainDiv>
-        </Wrapper>
-        </Wrap>
+                <TextStyle as={Link} to="/forgot-password">Forgot Password?</TextStyle>
+              </InputWrapper>
+
+              <ButtonWrapper>
+                <ButtonStyle type="submit" disabled={formik.isSubmitting}>
+                  Login
+                </ButtonStyle>
+              </ButtonWrapper>
+
+              <MainDiv>
+                Not a member? <SignUpDiv as={Link} to="/signup">Signup Now</SignUpDiv>
+              </MainDiv>
+            </Wrapper>
+          </Wrap>
         </MainWrap>
-      {/* </form> */}
+      </form>
     </div>
-  )
-}
+  );
+};
 
 export default Login;
+
+
+
+
