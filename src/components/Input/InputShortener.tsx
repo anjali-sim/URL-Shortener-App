@@ -1,5 +1,7 @@
 import React from 'react'
-import { Heading, InputContainer, InputStyle, SpanStyle, ButtonStyle, InputDiv, Paragraph } from './Input.style'
+import { Heading, InputContainer, InputStyle, SpanStyle, ButtonStyle, InputDiv, Paragraph, Image } from './Input.style'
+// import link from "../../assets/images/link.png"
+import url from "../../assets/images/url.png"
 
 const InputShortener:React.FC = () => {
   return (
@@ -12,7 +14,8 @@ const InputShortener:React.FC = () => {
           type="text"
           placeholder="Paste a link to shorten it"
           />
-          <ButtonStyle>shorten</ButtonStyle>
+          {/* <ButtonStyle><Image src={link} /></ButtonStyle> */}
+          <ButtonStyle><Image src={url} /></ButtonStyle>
         </InputDiv>
       </InputContainer>
     </>

@@ -6,8 +6,6 @@ import { Link } from 'react-router-dom';
 import { sendPasswordResetEmail } from 'firebase/auth';
 import {auth} from "../../utils/firebase"
 import { useFormik } from 'formik';
-// import { Formik } from 'formik';
-
 
 const ForgotPassword:React.FC = () => {
 
@@ -28,7 +26,6 @@ const ForgotPassword:React.FC = () => {
 
   return (
     <div>
-      {/* <form onSubmit={formik.handleSubmit}> */}
       <form onSubmit={formik.handleSubmit}>
         <MainWrap>
           <Wrap>

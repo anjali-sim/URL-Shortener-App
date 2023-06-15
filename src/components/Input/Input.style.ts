@@ -69,8 +69,8 @@ export const ButtonStyle = styled.button`
   font-weight: bold;
   border-top-right-radius: 3px;
   border-bottom-right-radius: 3px;
-  color: #fff;
-  background-color: #3d3d3d;
+  // color: #fff;
+  // background-color: #3d3d3d;
   border: none;
   cursor: pointer;
 `;
@@ -91,4 +91,9 @@ export const Paragraph = styled.p`
   @media(max-width: 400px) {
     font-size: 16px;
   }
+`;
+
+export const Image = styled.img`
+  width:35px;
+  height:35px;
 `;
