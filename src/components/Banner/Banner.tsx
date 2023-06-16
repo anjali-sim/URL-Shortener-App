@@ -1,7 +1,7 @@
 import React from 'react'
 import BannerStyle from './Banner.style'
-import InputShortener from '../Input/InputShortener'
-import Background from '../Background/Background'
+import InputShortener from '../Input'
+import Background from '../Background'
 
 const Banner:React.FC = () => {
   return (

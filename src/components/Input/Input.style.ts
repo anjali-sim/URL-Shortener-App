@@ -79,9 +79,12 @@ export const InputDiv = styled.div`
   display:flex;
   margin-top: 10px;
   margin-bottom:10px;
-  width:50%;
+  margin-left: 25px;
+  width:100%;
 
-
+  @media(max-width: 500px) {
+    width: 80%;
+  }
 `;
 
 export const Paragraph = styled.p`
@@ -96,4 +99,13 @@ export const Paragraph = styled.p`
 export const Image = styled.img`
   width:35px;
   height:35px;
+`;
+
+export const ResultDiv = styled.div`
+  display: flex;
+  width: 50%;
+`;
+
+export const ResultOutput = styled.div`
+  
 `;
