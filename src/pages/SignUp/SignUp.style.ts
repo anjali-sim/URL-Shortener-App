@@ -23,7 +23,6 @@ export const ButtonStyle = styled.button.attrs({type: "submit"})`
   margin-left:0px;
   background: -webkit-linear-gradient(left, #a445b2, #fa4299);
   border-radius: 5px;
-  // transition: all 3s ease-in;
   border: none;
   color: #fff;
   border-radius: 5px;
@@ -48,14 +47,13 @@ export const ButtonStyle = styled.button.attrs({type: "submit"})`
   }
 `;
 
-
 export const Wrap = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
   overflow: hidden;
   width: 390px;
-  height: 550px;
+  height: 600px;
   background-color: #fff;
   padding: 20px;
   border-radius: 5px;

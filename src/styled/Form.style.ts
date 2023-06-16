@@ -178,4 +178,14 @@ export const Slide2 = styled.button`
   }
 `;
 
+export const SignUpDiv = styled.button`
+  color:#fa4299;
+  text-decoration:none;
+  border: none;
+  background-color: #fff;
+  font-size: 16px;
 
+  &:hover {
+    text-decoration:underline;
+ }
+`;

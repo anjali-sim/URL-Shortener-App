@@ -6,6 +6,7 @@ import { Link } from 'react-router-dom';
 import { sendPasswordResetEmail } from 'firebase/auth';
 import {auth} from "../../utils/firebase"
 import { useFormik } from 'formik';
+import { showSuccessToast } from '../../utils/toast';
 
 const ForgotPassword:React.FC = () => {
 
@@ -17,7 +18,8 @@ const ForgotPassword:React.FC = () => {
       onSubmit: async (values) => {
         try {
           await sendPasswordResetEmail(auth, values.email);
-          console.log('Password reset email sent successfully!');
+          // console.log('Password reset email sent successfully!');
+          showSuccessToast("Password reset email sent successfully!!!")
         } catch (error) {
           console.log(error);
         }

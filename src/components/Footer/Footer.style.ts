@@ -1,6 +1,12 @@
 import styled from "styled-components";
 
 export const FooterSection = styled.div`
+
+
+// position: relative;
+// bottom: 70px;
+
+
 background-color: #e9e9e9;
   color: black;
   line-height: 1.5;
@@ -53,6 +59,12 @@ background: -webkit-linear-gradient(left, #a445b2, #fa4299);
 
 export const FooterDiv = styled.section`
     width: 100%;
+
+
+    // position:fixed;
+    // bottom:0;
+
+
     height: 150px;
     // background-color: #263238;
     // background-color: #2C3E50;

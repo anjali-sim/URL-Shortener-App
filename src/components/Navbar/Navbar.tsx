@@ -3,12 +3,13 @@ import { Button, NavbarStyle, Image, ListStyle } from './Navbar.style';
 import logo from "../../assets/images/Screenshot from 2023-06-13 12-12-25.png";
 import { DropdownContainer, DropdownButton, DropdownContent, DropdownItem } from './ToggleMenu.style';
 import { signOut, onAuthStateChanged } from 'firebase/auth';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { auth } from "../../utils/firebase";
 
 const Navbar: React.FC = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (user) => {
@@ -18,6 +19,7 @@ const Navbar: React.FC = () => {
       } else {
         // User is logged out
         setIsLoggedIn(false);
+        navigate("/");
       }
     });
 
@@ -62,8 +64,8 @@ const Navbar: React.FC = () => {
           </div>
 
           <div className="nav-links">
-            <ListStyle>Home</ListStyle>
-            <ListStyle>About</ListStyle>
+            <ListStyle as={Link} to="/">Home</ListStyle>
+            <ListStyle as={Link} to="/about">About</ListStyle>
             <ListStyle>Contact</ListStyle>
             <ListStyle>Features & Pricing</ListStyle>
 
@@ -72,8 +74,8 @@ const Navbar: React.FC = () => {
                 <DropdownContainer>
                   <DropdownButton onClick={toggleDropdown}>User Profile</DropdownButton>
                   <DropdownContent open={isOpen}>
-                    <DropdownItem href="#">Edit Profile</DropdownItem>
-                    <DropdownItem href="#">Settings</DropdownItem>
+                    <DropdownItem as={Link} to="/edit-profile">Edit Profile</DropdownItem>
+                    <DropdownItem >Settings</DropdownItem>
                     <DropdownItem onClick={handleLogout}>Logout</DropdownItem>
                   </DropdownContent>
                 </DropdownContainer>

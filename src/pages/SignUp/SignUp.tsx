@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Wrapper, FormWrapper, TitleText, SlideControls, Slide1, Slide2, InputStyle, MainWrap } from '../../styled/Form.style';
+import { Wrapper, FormWrapper, TitleText, SlideControls, Slide1, Slide2, InputStyle, MainWrap, MainDiv, SignUpDiv } from '../../styled/Form.style';
 import { ButtonSignUpWrapper, Wrap, InputWrapper, ButtonStyle } from './SignUp.style';
 import { ErrorStyle } from '../../styled/Error.style';
 import { useFormik } from 'formik';
@@ -10,6 +10,7 @@ import { createUserWithEmailAndPassword } from 'firebase/auth';
 import { collection, addDoc } from 'firebase/firestore';
 import {db} from '../../utils/firebase';
 import { useNavigate } from 'react-router-dom';
+import { showErrorToast } from '../../utils/toast';
 
 const SignUp: React.FC = () => {
   const [name, setName] = useState('');
@@ -37,10 +38,9 @@ const SignUp: React.FC = () => {
         await addDoc(collection(db, 'users'), userData);
         navigate('/login');
       } catch (error) {
-        if (error.code === 'auth/email-already-in-use') {
           // Handle the case when the email address is already in use
-          // console.log('Email is already registered.');
-          alert("Email is already registered.")
+        if (error.code === 'auth/email-already-in-use') {
+          showErrorToast("Email is already registered!!!")
         } else {
           // Handle other errors
           console.log(error);
@@ -114,6 +114,10 @@ const SignUp: React.FC = () => {
               <ButtonSignUpWrapper>
                 <ButtonStyle type="submit">SignUp</ButtonStyle>
               </ButtonSignUpWrapper>
+
+              <MainDiv>
+                Already have an account? <SignUpDiv as={Link} to="/login">Login</SignUpDiv>
+              </MainDiv>
             </Wrapper>
           </Wrap>
         </MainWrap>

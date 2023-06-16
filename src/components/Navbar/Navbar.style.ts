@@ -1,12 +1,14 @@
 import styled from "styled-components";
 
 export const NavbarStyle = styled.div`
+position: relative;
+top:0;
   & .nav {
     height: 60px;
     width: 100vw;
     background-color: #3d3d3d;
     position: relative;
-    top: 0;
+    // top: -76px;
     z-index: 1;
   }
 

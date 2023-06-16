@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import { Wrapper, FormWrapper, TitleText, SlideControls, Slide1, Slide2, InputWrapper, InputStyle, MainDiv, MainWrap } from '../../styled/Form.style';
-import { ButtonWrapper, TextStyle, Wrap, ButtonStyle, SignUpDiv } from './Login.style';
+import { Wrapper, FormWrapper, TitleText, SlideControls, Slide1, Slide2, InputWrapper, InputStyle, MainDiv, MainWrap, SignUpDiv } from '../../styled/Form.style';
+import { ButtonWrapper, TextStyle, Wrap, ButtonStyle } from './Login.style';
 import { Link, useNavigate } from 'react-router-dom';
 import { auth } from '../../utils/firebase';
 import { signInWithEmailAndPassword } from 'firebase/auth';

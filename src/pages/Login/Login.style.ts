@@ -97,14 +97,3 @@ export const ButtonStyle = styled.button.attrs({type: "submit"})`
   }
 `;
 
-export const SignUpDiv = styled.button`
-  color:#fa4299;
-  text-decoration:none;
-  border: none;
-  background-color: #fff;
-  font-size: 16px;
-
-  &:hover {
-    text-decoration:underline;
- }
-`;
