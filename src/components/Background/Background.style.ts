@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const BackgroundStyle = styled.div`
-position: relative;
+  position: relative;
   width: 100%;
   height: 474px;
   top: 0;
@@ -12,4 +12,3 @@ position: relative;
   opacity: 0.92;
   z-index: -1;
 `;
- 

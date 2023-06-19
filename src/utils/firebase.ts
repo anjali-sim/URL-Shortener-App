@@ -1,6 +1,7 @@
-import { initializeApp } from 'firebase/app';
-import { getAuth } from 'firebase/auth';
-import { getFirestore } from 'firebase/firestore';
+import { initializeApp } from "firebase/app";
+import { getAuth } from "firebase/auth";
+import { getFirestore } from "firebase/firestore";
+import { getDatabase, ref, onValue } from "firebase/database";
 // import firebase from 'firebase/compat/app';
 
 const firebaseConfig = {
@@ -10,12 +11,13 @@ const firebaseConfig = {
   storageBucket: "url-shortener-app-9e46d.appspot.com",
   messagingSenderId: "498438820911",
   appId: "1:498438820911:web:db2eaca2175cf1503462da",
-  measurementId: "G-ZW4LZPSZNT"
+  measurementId: "G-ZW4LZPSZNT",
 };
 
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 const db = getFirestore(app);
+const database = getDatabase(app);
 // const db = firebase.firestore();
 
-export { app, auth, db };
+export { app, auth, db, database, ref, onValue };

@@ -21,48 +21,48 @@ export const Wrap = styled.div`
   border-radius: 5px;
   box-shadow: 0px 15px 20px rgba(0, 0, 0, 0.1);
 
-  @media(max-width: 500px) {
+  @media (max-width: 500px) {
     width: 350px;
   }
-  @media(max-width: 410px) {
+  @media (max-width: 410px) {
     width: 310px;
     height: 480px;
   }
-  @media(max-width: 370px) {
+  @media (max-width: 370px) {
     width: 280px;
     height: 460px;
   }
-  @media(max-width: 330px) {
+  @media (max-width: 330px) {
     width: 260px;
   }
-  @media(max-width: 310px) {
+  @media (max-width: 310px) {
     width: 240px;
   }
-  @media(max-width: 290px) {
+  @media (max-width: 290px) {
     width: 230px;
   }
 `;
 
 export const TextStyle = styled.button`
   color: #fa4299;
-  border:none;
+  border: none;
   background-color: #fff;
-  font-size:16px;
+  font-size: 16px;
   text-decoration: none;
 
   &:hover {
     text-decoration: underline;
   }
 
-  @media(max-width: 410px) {
+  @media (max-width: 410px) {
     margin-left: 10px;
   }
 `;
 
-export const ButtonStyle = styled.button.attrs({type: "submit"})`
+export const ButtonStyle = styled.button.attrs({ type: "submit" })`
   height: 50px;
   padding: 10px 150px;
-  margin-left:20px;
+  margin-left: 20px;
   background: -webkit-linear-gradient(left, #a445b2, #fa4299);
   border-radius: 5px;
   border: none;
@@ -72,28 +72,27 @@ export const ButtonStyle = styled.button.attrs({type: "submit"})`
   font-weight: 500;
   cursor: pointer;
 
-  @media(max-width: 500px) {
+  @media (max-width: 500px) {
     padding: 10px 130px;
   }
-  @media(max-width: 410px) {
+  @media (max-width: 410px) {
     padding: 8px 120px;
-    height:46px;
+    height: 46px;
     margin-left: 15px;
   }
-  @media(max-width: 370px) {
+  @media (max-width: 370px) {
     padding: 10px 100px;
-    height:43px;
+    height: 43px;
     margin-left: 20px;
   }
-  @media(max-width: 330px) {
+  @media (max-width: 330px) {
     padding: 10px 90px;
-    height:40px;
+    height: 40px;
     margin-left: 25px;
   }
-  @media(max-width: 310px) {
+  @media (max-width: 310px) {
     padding: 10px 90px;
-    height:38px;
+    height: 38px;
     margin-left: 19px;
   }
 `;
-

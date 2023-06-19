@@ -1,31 +1,31 @@
 import styled from "styled-components";
 
 export const Heading = styled.h1`
-  font-family: 'Playfair Display', serif;
+  font-family: "Playfair Display", serif;
   font-size: 50px;
   color: #fff;
-  margin-top:8rem;
+  margin-top: 8rem;
   margin-bottom: 1.5rem;
 
-  @media(max-width: 690px) {
+  @media (max-width: 690px) {
     font-size: 45px;
   }
-  @media(max-width: 620px) {
+  @media (max-width: 620px) {
     font-size: 40px;
   }
-  @media(max-width: 550px) {
+  @media (max-width: 550px) {
     font-size: 37px;
   }
-  @media(max-width: 500px) {
+  @media (max-width: 500px) {
     font-size: 34px;
   }
-  @media(max-width: 450px) {
+  @media (max-width: 450px) {
     font-size: 30px;
   }
-  @media(max-width: 390px) {
+  @media (max-width: 390px) {
     font-size: 28px;
   }
-  @media(max-width: 360px) {
+  @media (max-width: 360px) {
     font-size: 25px;
   }
 `;
@@ -36,9 +36,9 @@ export const SpanStyle = styled.span`
 
 export const InputContainer = styled.div`
   display: flex;
-  position:absolute;
+  position: absolute;
   flex-direction: column;
-  align-items:center;
+  align-items: center;
   margin-bottom: 2rem;
 `;
 
@@ -56,7 +56,7 @@ export const InputStyle = styled.input`
     font-size: 0.9rem;
   }
 
-  @media(max-width: 500px) {
+  @media (max-width: 500px) {
     padding: 0.2rem 0.1rem 0.2rem 0;
   }
 `;
@@ -76,13 +76,13 @@ export const ButtonStyle = styled.button`
 `;
 
 export const InputDiv = styled.div`
-  display:flex;
+  display: flex;
   margin-top: 10px;
-  margin-bottom:10px;
+  margin-bottom: 10px;
   margin-left: 25px;
-  width:100%;
+  width: 100%;
 
-  @media(max-width: 500px) {
+  @media (max-width: 500px) {
     width: 80%;
   }
 `;
@@ -91,14 +91,14 @@ export const Paragraph = styled.p`
   color: #fff;
   font-size: 18px;
 
-  @media(max-width: 400px) {
+  @media (max-width: 400px) {
     font-size: 16px;
   }
 `;
 
 export const Image = styled.img`
-  width:35px;
-  height:35px;
+  width: 35px;
+  height: 35px;
 `;
 
 export const ResultDiv = styled.div`
@@ -106,6 +106,4 @@ export const ResultDiv = styled.div`
   width: 50%;
 `;
 
-export const ResultOutput = styled.div`
-  
-`;
+export const ResultOutput = styled.div``;

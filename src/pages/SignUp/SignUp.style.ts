@@ -7,8 +7,8 @@ export const InputWrapper = styled.div`
 `;
 
 export const ButtonSignUpWrapper = styled.div`
-  display:flex;
-  justify-content:center;
+  display: flex;
+  justify-content: center;
   height: 50px;
   width: 100%;
   margin-top: 20px;
@@ -17,10 +17,10 @@ export const ButtonSignUpWrapper = styled.div`
   overflow: hidden;
 `;
 
-export const ButtonStyle = styled.button.attrs({type: "submit"})`
+export const ButtonStyle = styled.button.attrs({ type: "submit" })`
   height: 50px;
   padding: 10px 150px;
-  margin-left:0px;
+  margin-left: 0px;
   background: -webkit-linear-gradient(left, #a445b2, #fa4299);
   border-radius: 5px;
   border: none;
@@ -30,20 +30,20 @@ export const ButtonStyle = styled.button.attrs({type: "submit"})`
   font-weight: 500;
   cursor: pointer;
 
-  @media(max-width: 500px) {
+  @media (max-width: 500px) {
     padding: 10px 130px;
   }
-  @media(max-width: 410px) {
+  @media (max-width: 410px) {
     padding: 8px 120px;
-    height:46px;
+    height: 46px;
   }
-  @media(max-width: 370px) {
+  @media (max-width: 370px) {
     padding: 10px 100px;
-    height:43px;
+    height: 43px;
   }
-  @media(max-width: 330px) {
+  @media (max-width: 330px) {
     padding: 10px 90px;
-    height:40px;
+    height: 40px;
   }
 `;
 
@@ -59,23 +59,22 @@ export const Wrap = styled.div`
   border-radius: 5px;
   box-shadow: 0px 15px 20px rgba(0, 0, 0, 0.1);
 
-  @media(max-width: 500px) {
+  @media (max-width: 500px) {
     width: 350px;
   }
-  @media(max-width: 410px) {
+  @media (max-width: 410px) {
     width: 310px;
   }
-  @media(max-width: 370px) {
+  @media (max-width: 370px) {
     width: 280px;
   }
-  @media(max-width: 330px) {
+  @media (max-width: 330px) {
     width: 260px;
   }
-  @media(max-width: 310px) {
+  @media (max-width: 310px) {
     width: 240px;
   }
-  @media(max-width: 290px) {
+  @media (max-width: 290px) {
     width: 230px;
   }
 `;
-

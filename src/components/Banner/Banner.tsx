@@ -1,9 +1,9 @@
-import React from 'react'
-import BannerStyle from './Banner.style'
-import InputShortener from '../Input'
-import Background from '../Background'
+import React from "react";
+import BannerStyle from "./Banner.style";
+import InputShortener from "../Input";
+import Background from "../Background";
 
-const Banner:React.FC = () => {
+const Banner: React.FC = () => {
   return (
     <>
       <BannerStyle>
@@ -11,7 +11,7 @@ const Banner:React.FC = () => {
         <Background />
       </BannerStyle>
     </>
-  )
-}
+  );
+};
 
-export default Banner
+export default Banner;
