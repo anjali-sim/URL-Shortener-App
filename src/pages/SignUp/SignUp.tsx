@@ -52,6 +52,7 @@ const SignUp: React.FC = () => {
         );
         const user = userCredential.user;
         const userData = {
+          uid: user.uid,
           name: values.name,
           email: values.email,
         };

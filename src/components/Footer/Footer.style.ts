@@ -1,5 +1,10 @@
 import styled from "styled-components";
 
+export const Wrapper = styled.div`
+position: relative;
+bottom:0;
+`;
+
 export const FooterSection = styled.div`
   // position: relative;
   // bottom: 70px;

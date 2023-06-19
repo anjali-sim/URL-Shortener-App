@@ -1,8 +1,11 @@
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
+// For specifying the type of the toast message 
+type ToastMessage = string;
+
 // for showing error toast notification
-export const showErrorToast = (message) => {
+export const showErrorToast = (message: ToastMessage) => {
   toast.error(message, {
     position: "top-center",
     autoClose: 3000,
@@ -16,7 +19,7 @@ export const showErrorToast = (message) => {
 };
 
 // for showing success toast notification
-export const showSuccessToast = (message) => {
+export const showSuccessToast = (message: ToastMessage) => {
   toast.success(message, {
     position: "top-center",
     autoClose: 3000,
@@ -25,6 +28,6 @@ export const showSuccessToast = (message) => {
     pauseOnHover: true,
     draggable: true,
     progress: undefined,
-    theme: "dark",
+    theme: "light",
   });
 };

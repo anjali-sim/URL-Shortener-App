@@ -1,6 +1,7 @@
 import React from "react";
 import { SocialIcon } from "react-social-icons";
 import {
+  Wrapper,
   FooterDiv,
   IconsDiv,
   Icons,
@@ -16,6 +17,7 @@ import {
 const Footer: React.FC = () => {
   return (
     <>
+    <Wrapper>
       <FooterSection>
         <DivStyle>
           <Title>About</Title>
@@ -120,6 +122,7 @@ const Footer: React.FC = () => {
           <Paragraph>LinkZip &copy; 2023, ALL Rights Reserved.</Paragraph>
         </IconsDiv>
       </FooterDiv>
+      </Wrapper>
     </>
   );
 };
