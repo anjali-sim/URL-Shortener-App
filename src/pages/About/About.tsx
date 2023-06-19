@@ -1,11 +1,11 @@
-import Navbar from "../../components/Navbar";
+import Navbar from "@/components/Navbar";
 import React from "react";
 import { Wrapper, Container } from "./About.style";
-import Footer from "../../components/Footer";
+import Footer from "@/components/Footer";
 
-const AboutPage: React.FC = () => {
+const About: React.FC = () => {
   return (
-    <div>
+    <>
       <Navbar />
       <Wrapper>
       <Container>
@@ -29,8 +29,8 @@ const AboutPage: React.FC = () => {
       </Container>
       </Wrapper>
       <Footer />
-    </div>
+    </>
   );
 };
 
-export default AboutPage;
+export default About;

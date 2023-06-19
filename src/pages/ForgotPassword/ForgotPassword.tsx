@@ -6,7 +6,7 @@ import {
   InputStyle,
   MainWrap,
   MainDiv,
-} from "../../styled/Form.style";
+} from "@/styled/Form.style";
 import {
   Wrap,
   ButtonWrapper,
@@ -14,13 +14,13 @@ import {
   SignUpDiv,
   TitleText,
 } from "./ForgotPassword.style";
-import { ErrorStyle } from "../../styled/Error.style";
+import { ErrorStyle } from "@/styled/Error.style";
 import { Link } from "react-router-dom";
 import { sendPasswordResetEmail } from "firebase/auth";
-import { auth } from "../../utils/firebase";
+import { auth } from "@/utils/firebase";
 import { useFormik } from "formik";
-import { showSuccessToast } from "../../utils/toast";
-import forgotPasswordValidationSchema from "../../constants/forgotPasswordSchema";
+import { showSuccessToast } from "@/utils/toast";
+import forgotPasswordValidationSchema from "@/constants/forgotPasswordSchema";
 
 const ForgotPassword: React.FC = () => {
   const [email, setEmail] = useState("");

@@ -1,9 +1,27 @@
-import React, { useEffect, useState } from 'react';
-import { auth } from '../../utils/firebase';
-import { getFirestore, collection, getDocs, query, where } from 'firebase/firestore';
-import Navbar from '../../components/Navbar';
-import { Wrapper, Container, Photo, Image, Content, Name, Email, Border, EditPhotoButton, EditProfileButton, ButtonPosition } from './ViewProfile.style';
-import profile from "../../assets/images/profile.png";
+import React, { useEffect, useState } from "react";
+import { auth } from "@/utils/firebase";
+import {
+  getFirestore,
+  collection,
+  getDocs,
+  query,
+  where,
+} from "firebase/firestore";
+import Navbar from "@/components/Navbar";
+import {
+  Wrapper,
+  Container,
+  Photo,
+  Image,
+  Content,
+  Name,
+  Email,
+  Border,
+  EditPhotoButton,
+  EditProfileButton,
+  ButtonPosition,
+} from "./ViewProfile.style";
+import profile from "@/assets/images/profile.png";
 import { Link } from "react-router-dom";
 
 interface User {
@@ -17,10 +35,12 @@ const Profile: React.FC = () => {
   useEffect(() => {
     const unsubscribe = auth.onAuthStateChanged((user) => {
       if (user) {
-        
         const firestore = getFirestore();
-        const usersCollectionRef = collection(firestore, 'users');
-        const userQuery = query(usersCollectionRef, where('uid', '==', user.uid));
+        const usersCollectionRef = collection(firestore, "users");
+        const userQuery = query(
+          usersCollectionRef,
+          where("uid", "==", user.uid)
+        );
 
         getDocs(userQuery)
           .then((snapshot) => {
@@ -29,11 +49,11 @@ const Profile: React.FC = () => {
 
               setUser(userData);
             } else {
-              console.log('User data not found');
+              console.log("User data not found");
             }
           })
           .catch((error) => {
-            console.log('Error retrieving user data:', error);
+            console.log("Error retrieving user data:", error);
           });
       } else {
         setUser(null);
@@ -45,27 +65,27 @@ const Profile: React.FC = () => {
 
   return (
     <>
-       <Navbar />
+      <Navbar />
       {user ? (
-
-      <Wrapper>
-        <Container>
-          <Border>
-            <Photo>
-              <Image src={profile} alt="User"></Image>
-              <EditPhotoButton>+ Upload Photo</EditPhotoButton>
-            </Photo>
-            <Content>
-              <Name>Name: {user.name}</Name>
-              <Email>Email: {user.email}</Email>
-              <ButtonPosition>
-              <EditProfileButton as={Link} to="/edit-profile">+ Edit Profile</EditProfileButton>
-              </ButtonPosition>
-            </Content>
+        <Wrapper>
+          <Container>
+            <Border>
+              <Photo>
+                <Image src={profile} alt="User"></Image>
+                <EditPhotoButton>+ Upload Photo</EditPhotoButton>
+              </Photo>
+              <Content>
+                <Name>Name: {user.name}</Name>
+                <Email>Email: {user.email}</Email>
+                <ButtonPosition>
+                  <EditProfileButton as={Link} to="/edit-profile">
+                    + Edit Profile
+                  </EditProfileButton>
+                </ButtonPosition>
+              </Content>
             </Border>
-        </Container>
+          </Container>
         </Wrapper>
-
       ) : (
         <div>
           <h1>User not found</h1>

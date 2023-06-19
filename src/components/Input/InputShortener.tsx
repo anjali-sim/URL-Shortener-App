@@ -10,7 +10,7 @@ import {
   Image,
 } from "./Input.style";
 // import link from "../../assets/images/link.png"
-import url from "../../assets/images/url.png";
+import url from "@/assets/images/url.png";
 
 const InputShortener: React.FC = () => {
   return (

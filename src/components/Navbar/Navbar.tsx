@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { Button, NavbarStyle, Image, ListStyle } from './Navbar.style';
-import logo from "../../assets/images/Screenshot from 2023-06-13 12-12-25.png";
+import logo from "@/assets/images/Screenshot from 2023-06-13 12-12-25.png";
 import { DropdownContainer, DropdownButton, DropdownContent, DropdownItem } from './ToggleMenu.style';
 import { signOut, onAuthStateChanged } from 'firebase/auth';
 import { Link, useNavigate } from 'react-router-dom';
-import { auth } from "../../utils/firebase";
+import { auth } from "@/utils/firebase";
 
 const Navbar: React.FC = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);

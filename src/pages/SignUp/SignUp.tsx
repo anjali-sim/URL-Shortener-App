@@ -10,23 +10,23 @@ import {
   MainWrap,
   MainDiv,
   SignUpDiv,
-} from "../../styled/Form.style";
+} from "@/styled/Form.style";
 import {
   ButtonSignUpWrapper,
   Wrap,
   InputWrapper,
   ButtonStyle,
 } from "./SignUp.style";
-import { ErrorStyle } from "../../styled/Error.style";
+import { ErrorStyle } from "@/styled/Error.style";
 import { useFormik } from "formik";
-import signupValidationSchema from "../../constants/signupSchema";
+import signupValidationSchema from "@/constants/signupSchema";
 import { Link } from "react-router-dom";
-import { auth } from "../../utils/firebase";
+import { auth } from "@/utils/firebase";
 import { createUserWithEmailAndPassword } from "firebase/auth";
 import { collection, addDoc } from "firebase/firestore";
-import { db } from "../../utils/firebase";
+import { db } from "@/utils/firebase";
 import { useNavigate } from "react-router-dom";
-import { showErrorToast } from "../../utils/toast";
+import { showErrorToast } from "@/utils/toast";
 
 const SignUp: React.FC = () => {
   const [name, setName] = useState("");

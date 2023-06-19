@@ -1,14 +1,32 @@
 import React, { useState } from "react";
-import { Wrapper, FormWrapper, TitleText, SlideControls, Slide1, Slide2, InputWrapper, InputStyle, MainDiv, MainWrap, SignUpDiv } from "../../styled/Form.style";
-import { ButtonWrapper, TextStyle, Wrap, ButtonStyle, LoaderContainer } from "./Login.style";
+import {
+  Wrapper,
+  FormWrapper,
+  TitleText,
+  SlideControls,
+  Slide1,
+  Slide2,
+  InputWrapper,
+  InputStyle,
+  MainDiv,
+  MainWrap,
+  SignUpDiv,
+} from "@/styled/Form.style";
+import {
+  ButtonWrapper,
+  TextStyle,
+  Wrap,
+  ButtonStyle,
+  LoaderContainer,
+} from "./Login.style";
 import { Link, useNavigate } from "react-router-dom";
-import { auth } from "../../utils/firebase";
+import { auth } from "@/utils/firebase";
 import { signInWithEmailAndPassword } from "firebase/auth";
-import { ErrorStyle } from "../../styled/Error.style";
+import { ErrorStyle } from "@/styled/Error.style";
 import { useFormik } from "formik";
-import loginValidationSchema from "../../constants/loginSchema";
-import { showErrorToast } from "../../utils/toast";
-import {Rings} from "react-loader-spinner";
+import loginValidationSchema from "@/constants/loginSchema";
+import { showErrorToast } from "@/utils/toast";
+import { Rings } from "react-loader-spinner";
 
 const Login: React.FC = () => {
   const [error, setError] = useState("");
@@ -27,7 +45,11 @@ const Login: React.FC = () => {
       setIsLoading(true);
 
       try {
-        const userCredential = await signInWithEmailAndPassword(auth, values.email, values.password);
+        const userCredential = await signInWithEmailAndPassword(
+          auth,
+          values.email,
+          values.password
+        );
         console.log(userCredential);
 
         setIsLoading(false);
@@ -44,7 +66,7 @@ const Login: React.FC = () => {
     <div>
       {isLoading ? (
         <LoaderContainer>
-          <Rings color="#000000" height={100} width={100} ></Rings>
+          <Rings color="#000000" height={100} width={100}></Rings>
         </LoaderContainer>
       ) : (
         <form onSubmit={formik.handleSubmit}>
@@ -112,4 +134,3 @@ const Login: React.FC = () => {
 };
 
 export default Login;
-
