@@ -18,6 +18,7 @@ import {
   Wrap,
   ButtonStyle,
   LoaderContainer,
+  TextDiv
 } from "./Login.style";
 import { Link, useNavigate } from "react-router-dom";
 import { auth } from "@/utils/firebase";
@@ -109,9 +110,11 @@ const Login: React.FC = () => {
                     <ErrorStyle>{formik.errors.password}</ErrorStyle>
                   )}
 
+                <TextDiv>
                   <TextStyle as={Link} to="/forgot-password">
                     Forgot Password?
                   </TextStyle>
+                  </TextDiv>
                 </InputWrapper>
 
                 <ButtonWrapper>

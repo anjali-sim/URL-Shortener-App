@@ -56,8 +56,6 @@ const ForgotPassword: React.FC = () => {
                   type="email"
                   id="email"
                   placeholder="Your email"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
                   {...formik.getFieldProps("email")}
                 />
                 {formik.touched.email && formik.errors.email && (
