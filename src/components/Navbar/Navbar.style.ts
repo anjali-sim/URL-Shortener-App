@@ -8,7 +8,6 @@ export const NavbarStyle = styled.div`
     width: 100vw;
     background-color: #3d3d3d;
     position: relative;
-    // top: -76px;
     z-index: 1;
   }
 

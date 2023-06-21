@@ -1,25 +1,8 @@
-import React, { useState } from "react";
-import {
-  Wrapper,
-  FormWrapper,
-  TitleText,
-  SlideControls,
-  Slide1,
-  Slide2,
-  InputStyle,
-  MainWrap,
-  MainDiv,
-  SignUpDiv,
-} from "@/styled/Form.style";
-import {
-  ButtonSignUpWrapper,
-  Wrap,
-  InputWrapper,
-  ButtonStyle,
-} from "./SignUp.style";
-import { ErrorStyle } from "@/styled/Error.style";
+import React from "react";
+import { Wrapper, FormWrapper, TitleText, SlideControls, Slide1, Slide2, InputWrapper, MainWrap, MainDiv, SignUpDiv } from "@/styled/Form.style";
+import { ButtonSignUpWrapper, Wrap, ButtonStyle } from "./SignUp.style";
 import { useFormik } from "formik";
-import signupValidationSchema from "@/constants/signupSchema";
+import { validationSchemas } from "@/constants/formValidation";
 import { Link } from "react-router-dom";
 import { auth } from "@/utils/firebase";
 import { createUserWithEmailAndPassword } from "firebase/auth";
@@ -27,23 +10,27 @@ import { collection, addDoc } from "firebase/firestore";
 import { db } from "@/utils/firebase";
 import { useNavigate } from "react-router-dom";
 import { showErrorToast } from "@/utils/toast";
+import Form from "@/components/Form/Form";
+
+interface SignUpValues {
+  name: string;
+  email: string;
+  password: string;
+  repassword: string;
+}
 
 const SignUp: React.FC = () => {
-  const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-
   const navigate = useNavigate();
 
-  const formik = useFormik({
+  const formik = useFormik<SignUpValues>({
     initialValues: {
       name: "",
       email: "",
       password: "",
       repassword: "",
     },
-    validationSchema: signupValidationSchema,
-    onSubmit: async (values) => {
+    validationSchema: validationSchemas.signup,
+    onSubmit: async (values:SignUpValues) => {
       try {
         const userCredential = await createUserWithEmailAndPassword(
           auth,
@@ -92,48 +79,7 @@ const SignUp: React.FC = () => {
               </SlideControls>
 
               <InputWrapper>
-                <InputStyle
-                  type="text"
-                  id="name"
-                  placeholder="Your name"
-                  value={name}
-                  onChange={(e) => setName(e.target.value)}
-                  {...formik.getFieldProps("name")}
-                />
-                {formik.touched.name && formik.errors.name ? (
-                  <ErrorStyle>{formik.errors.name}</ErrorStyle>
-                ) : null}
-                <InputStyle
-                  type="email"
-                  id="email"
-                  placeholder="Your email address"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  {...formik.getFieldProps("email")}
-                />
-                {formik.touched.email && formik.errors.email ? (
-                  <ErrorStyle>{formik.errors.email}</ErrorStyle>
-                ) : null}
-                <InputStyle
-                  type="password"
-                  id="password"
-                  placeholder="Your password"
-                  value={password}
-                  onChange={(e) => setPassword(e.target.value)}
-                  {...formik.getFieldProps("password")}
-                />
-                {formik.touched.password && formik.errors.password ? (
-                  <ErrorStyle>{formik.errors.password}</ErrorStyle>
-                ) : null}
-                <InputStyle
-                  type="password"
-                  id="repassword"
-                  placeholder="Confirm password"
-                  {...formik.getFieldProps("repassword")}
-                />
-                {formik.touched.repassword && formik.errors.repassword ? (
-                  <ErrorStyle>{formik.errors.repassword}</ErrorStyle>
-                ) : null}
+                <Form formik={formik} />
               </InputWrapper>
 
               <ButtonSignUpWrapper>

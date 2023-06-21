@@ -65,7 +65,6 @@ export const ButtonStyle = styled.button.attrs({ type: "submit" })`
   margin-left: 20px;
   background: -webkit-linear-gradient(left, #a445b2, #fa4299);
   border-radius: 5px;
-  // transition: all 3s ease-in;
   border: none;
   color: #fff;
   border-radius: 5px;

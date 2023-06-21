@@ -6,7 +6,6 @@ import path from "path";
 export default defineConfig({
   resolve: {
     alias: 
-    // [{ find: '@', replacement: '/src' }],
     {
       "@": path.resolve(__dirname, "./src")
     },

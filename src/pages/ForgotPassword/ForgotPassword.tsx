@@ -20,7 +20,7 @@ import { sendPasswordResetEmail } from "firebase/auth";
 import { auth } from "@/utils/firebase";
 import { useFormik } from "formik";
 import { showSuccessToast } from "@/utils/toast";
-import forgotPasswordValidationSchema from "@/constants/forgotPasswordSchema";
+import { validationSchemas } from "@/constants/formValidation";
 
 const ForgotPassword: React.FC = () => {
   const [email, setEmail] = useState("");
@@ -28,7 +28,7 @@ const ForgotPassword: React.FC = () => {
     initialValues: {
       email: "",
     },
-    validationSchema: forgotPasswordValidationSchema,
+    validationSchema: validationSchemas.forgotPassword,
     onSubmit: async (values) => {
       try {
         await sendPasswordResetEmail(auth, values.email);
@@ -66,7 +66,6 @@ const ForgotPassword: React.FC = () => {
               </InputWrapper>
 
               <ButtonWrapper>
-                {/* <ButtonStyle type="submit" disabled={formik.isSubmitting}> */}
                 <ButtonStyle type="submit">Reset Password</ButtonStyle>
               </ButtonWrapper>
 

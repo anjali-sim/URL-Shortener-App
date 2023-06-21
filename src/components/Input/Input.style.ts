@@ -69,8 +69,6 @@ export const ButtonStyle = styled.button`
   font-weight: bold;
   border-top-right-radius: 3px;
   border-bottom-right-radius: 3px;
-  // color: #fff;
-  // background-color: #3d3d3d;
   border: none;
   cursor: pointer;
 `;
@@ -106,4 +104,3 @@ export const ResultDiv = styled.div`
   width: 50%;
 `;
 
-export const ResultOutput = styled.div``;

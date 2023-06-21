@@ -24,13 +24,13 @@ import { auth } from "@/utils/firebase";
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { ErrorStyle } from "@/styled/Error.style";
 import { useFormik } from "formik";
-import loginValidationSchema from "@/constants/loginSchema";
+import { validationSchemas } from "@/constants/formValidation";
 import { showErrorToast } from "@/utils/toast";
 import { Rings } from "react-loader-spinner";
 
 const Login: React.FC = () => {
   const [error, setError] = useState("");
-  const [isLoading, setIsLoading] = useState(false);
+  const [loading, IsLoading] = useState(false);
 
   const navigate = useNavigate();
 
@@ -39,10 +39,10 @@ const Login: React.FC = () => {
       email: "",
       password: "",
     },
-    validationSchema: loginValidationSchema,
+    validationSchema: validationSchemas.login,
     onSubmit: async (values) => {
       setError("");
-      setIsLoading(true);
+      IsLoading(true);
 
       try {
         const userCredential = await signInWithEmailAndPassword(
@@ -52,19 +52,19 @@ const Login: React.FC = () => {
         );
         console.log(userCredential);
 
-        setIsLoading(false);
+        IsLoading(false);
         navigate("/");
       } catch (error) {
         setError(error.message);
         showErrorToast("Invalid Username or Password!!!");
-        setIsLoading(false);
+        IsLoading(false);
       }
     },
   });
 
   return (
     <div>
-      {isLoading ? (
+      {loading ? (
         <LoaderContainer>
           <Rings color="#000000" height={100} width={100}></Rings>
         </LoaderContainer>

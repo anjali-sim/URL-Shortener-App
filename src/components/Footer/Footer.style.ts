@@ -1,14 +1,11 @@
 import styled from "styled-components";
 
 export const Wrapper = styled.div`
-position: relative;
-bottom:0;
+  position: relative;
+  bottom: 0;
 `;
 
 export const FooterSection = styled.div`
-  // position: relative;
-  // bottom: 70px;
-
   background-color: #e9e9e9;
   color: black;
   line-height: 1.5;
@@ -61,13 +58,7 @@ export const SubmitStyle = styled.input.attrs({ type: "submit" })`
 
 export const FooterDiv = styled.section`
   width: 100%;
-
-  // position:fixed;
-  // bottom:0;
-
   height: 150px;
-  // background-color: #263238;
-  // background-color: #2C3E50;
   background-color: #3d3d3d;
   text-align: center;
   color: #f4f4f4;
