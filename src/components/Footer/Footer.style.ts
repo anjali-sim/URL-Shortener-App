@@ -15,7 +15,7 @@ export const FooterSection = styled.div`
   justify-content: center;
 `;
 
-export const DivStyle = styled.div`
+export const Div = styled.div`
   padding: 1.25rem;
   min-width: 12.5rem;
 
@@ -32,7 +32,7 @@ export const Title = styled.h2`
   padding-bottom: 0.625rem;
 `;
 
-export const ReferStyle = styled.a`
+export const Reference = styled.a`
   text-decoration: none;
   color: black;
 
@@ -41,13 +41,13 @@ export const ReferStyle = styled.a`
   }
 `;
 
-export const InputStyle = styled.input.attrs({ type: "email" })`
+export const Input = styled.input.attrs({ type: "email" })`
   border: 0;
   padding: 0.625rem;
   margin-top: 0.3125rem;
 `;
 
-export const SubmitStyle = styled.input.attrs({ type: "submit" })`
+export const Submit = styled.input.attrs({ type: "submit" })`
   background: -webkit-linear-gradient(left, #a445b2, #fa4299);
   color: #fff;
   cursor: pointer;

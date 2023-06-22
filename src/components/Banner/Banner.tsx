@@ -1,15 +1,15 @@
 import React from "react";
-import BannerStyle from "./Banner.style";
+import BannerContent from "./Banner.style";
 import InputShortener from "../Input";
 import Background from "../Background";
 
 const Banner: React.FC = () => {
   return (
     <>
-      <BannerStyle>
+      <BannerContent>
         <InputShortener />
         <Background />
-      </BannerStyle>
+      </BannerContent>
     </>
   );
 };

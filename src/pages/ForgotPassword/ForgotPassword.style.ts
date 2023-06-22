@@ -44,22 +44,7 @@ export const Wrap = styled.div`
   }
 `;
 
-export const TextStyle = styled.p`
-  margin-top: 5px;
-  margin-left: 5px;
-  color: #fa4299;
-  text-decoration: none;
-
-  &:hover {
-    text-decoration: underline;
-  }
-
-  @media (max-width: 410px) {
-    margin-left: 10px;
-  }
-`;
-
-export const ButtonStyle = styled.button.attrs({ type: "submit" })`
+export const Button = styled.button.attrs({ type: "submit" })`
   height: 50px;
   padding: 10px 100px;
   margin-left: 20px;

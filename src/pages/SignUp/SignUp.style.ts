@@ -17,7 +17,7 @@ export const ButtonSignUpWrapper = styled.div`
   overflow: hidden;
 `;
 
-export const ButtonStyle = styled.button.attrs({ type: "submit" })`
+export const Button = styled.button.attrs({ type: "submit" })`
   height: 50px;
   padding: 10px 150px;
   margin-left: 0px;

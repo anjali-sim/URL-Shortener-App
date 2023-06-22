@@ -53,7 +53,7 @@ export const TextDiv = styled.div`
   margin-top: 18px;
 `;
 
-export const TextStyle = styled.button`
+export const Text = styled.button`
   color: #fa4299;
   border: none;
   background-color: #fff;
@@ -69,7 +69,7 @@ export const TextStyle = styled.button`
   }
 `;
 
-export const ButtonStyle = styled.button.attrs({ type: "submit" })`
+export const Button = styled.button.attrs({ type: "submit" })`
   height: 50px;
   padding: 10px 150px;
   margin-left: 20px;

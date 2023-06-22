@@ -1,10 +1,10 @@
 import React from "react";
-import { BackgroundStyle } from "./Background.style";
+import GradientBackground from "./Background.style";
 
 const Background: React.FC = () => {
   return (
     <>
-      <BackgroundStyle />
+      <GradientBackground />
     </>
   );
 };

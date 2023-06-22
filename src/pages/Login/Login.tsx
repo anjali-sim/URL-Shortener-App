@@ -7,16 +7,16 @@ import {
   Slide1,
   Slide2,
   InputWrapper,
-  InputStyle,
+  Input,
   MainDiv,
   MainWrap,
   SignUpDiv,
 } from "@/styled/Form.style";
 import {
   ButtonWrapper,
-  TextStyle,
+  Text,
   Wrap,
-  ButtonStyle,
+  Button,
   LoaderContainer,
   TextDiv
 } from "./Login.style";
@@ -90,7 +90,7 @@ const Login: React.FC = () => {
                 </SlideControls>
 
                 <InputWrapper>
-                  <InputStyle
+                  <Input
                     type="email"
                     id="email"
                     placeholder="Email Address"
@@ -100,7 +100,7 @@ const Login: React.FC = () => {
                     <ErrorStyle>{formik.errors.email}</ErrorStyle>
                   )}
 
-                  <InputStyle
+                  <Input
                     type="password"
                     id="password"
                     placeholder="Password"
@@ -111,14 +111,14 @@ const Login: React.FC = () => {
                   )}
 
                 <TextDiv>
-                  <TextStyle as={Link} to="/forgot-password">
+                  <Text as={Link} to="/forgot-password">
                     Forgot Password?
-                  </TextStyle>
+                  </Text>
                   </TextDiv>
                 </InputWrapper>
 
                 <ButtonWrapper>
-                  <ButtonStyle type="submit">Login</ButtonStyle>
+                  <Button type="submit">Login</Button>
                 </ButtonWrapper>
 
                 <MainDiv>

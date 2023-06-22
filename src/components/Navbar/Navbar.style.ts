@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const NavbarStyle = styled.div`
+export const Navigationbar = styled.div`
   position: relative;
   top: 0;
   & .nav {
@@ -123,7 +123,7 @@ export const Image = styled.img`
   }
 `;
 
-export const ListStyle = styled.a`
+export const List = styled.a`
   display: inline-block;
   padding: 13px 10px 13px 10px;
   text-decoration: none;

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Button, NavbarStyle, Image, ListStyle } from "./Navbar.style";
+import { Button, Navigationbar, Image, List } from "./Navbar.style";
 import logo from "@/assets/images/Screenshot from 2023-06-13 12-12-25.png";
 import {
   DropdownContainer,
@@ -51,7 +51,7 @@ const Navbar: React.FC = () => {
 
   return (
     <>
-      <NavbarStyle>
+      <Navigationbar>
         <div className="nav">
           <input type="checkbox" id="nav-check" />
           <div className="nav-header">
@@ -68,14 +68,14 @@ const Navbar: React.FC = () => {
           </div>
 
           <div className="nav-links">
-            <ListStyle as={Link} to="/">
+            <List as={Link} to="/">
               Home
-            </ListStyle>
-            <ListStyle as={Link} to="/about">
+            </List>
+            <List as={Link} to="/about">
               About
-            </ListStyle>
-            <ListStyle>Contact</ListStyle>
-            <ListStyle>Features & Pricing</ListStyle>
+            </List>
+            <List>Contact</List>
+            <List>Features & Pricing</List>
 
             {isLoggedIn ? (
               <>
@@ -96,21 +96,21 @@ const Navbar: React.FC = () => {
               </>
             ) : (
               <>
-                <ListStyle>
+                <List>
                   <Button as={Link} to="/login">
                     Login
                   </Button>
-                </ListStyle>
-                <ListStyle>
+                </List>
+                <List>
                   <Button as={Link} to="/signup">
                     SignUp
                   </Button>
-                </ListStyle>
+                </List>
               </>
             )}
           </div>
         </div>
-      </NavbarStyle>
+      </Navigationbar>
     </>
   );
 };

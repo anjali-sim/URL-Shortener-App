@@ -2,9 +2,9 @@ import React, { useState } from "react";
 import {
   Heading,
   InputContainer,
-  InputStyle,
-  SpanStyle,
-  ButtonStyle,
+  Input,
+  Span,
+  Button,
   InputDiv,
   Paragraph,
   Image,
@@ -34,20 +34,20 @@ const InputShortener: React.FC = () => {
     <>
       <InputContainer>
         <Heading>
-          SHORTENING YOUR <SpanStyle>URL?</SpanStyle>
+          SHORTENING YOUR <Span>URL?</Span>
         </Heading>
         <Paragraph>Sure, LinkZip will do that at a mouse click.</Paragraph>
         <form onSubmit={handleShortenUrl}>
           <InputDiv>
-            <InputStyle
+            <Input
               type="text"
               placeholder="Paste a link to shorten it"
               value={url}
               onChange={(e) => setUrl(e.target.value)}
             />
-            <ButtonStyle>
+            <Button>
               <Image src={url} />
-            </ButtonStyle>
+            </Button>
           </InputDiv>
         </form>
         {shortenedUrl && (

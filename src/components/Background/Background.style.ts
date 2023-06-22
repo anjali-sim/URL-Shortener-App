@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const BackgroundStyle = styled.div`
+const GradientBackground = styled.div`
   position: relative;
   width: 100%;
   height: 474px;
@@ -12,3 +12,5 @@ export const BackgroundStyle = styled.div`
   opacity: 0.92;
   z-index: -1;
 `;
+
+export default GradientBackground;

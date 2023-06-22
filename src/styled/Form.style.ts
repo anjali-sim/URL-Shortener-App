@@ -20,7 +20,7 @@ export const Wrapper = styled.div`
   justify-content: center;
 `;
 
-export const InputStyle = styled.input`
+export const Input = styled.input`
   height: 50px;
   width: 370px;
   outline: none;
@@ -151,7 +151,6 @@ export const Slide1 = styled.button`
 
   &:hover {
     background: -webkit-linear-gradient(left, #73307d, #d70669);
-    // background: -webkit-linear-gradient(left, #62296b, #b9055a);
   }
 `;
 
@@ -174,7 +173,6 @@ export const Slide2 = styled.button`
 
   &:hover {
     background: -webkit-linear-gradient(left, #73307d, #d70669);
-    // background: -webkit-linear-gradient(left, #62296b, #b9055a);
   }
 `;
 

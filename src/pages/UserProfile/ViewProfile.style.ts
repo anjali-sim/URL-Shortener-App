@@ -10,7 +10,6 @@ export const Container = styled.div`
   margin-top: 30px;
   display: flex;
   width: 30%;
-  // height: 50%;
   padding: 20px 20px;
   justify-content: center;
   align-items: center;
@@ -24,7 +23,6 @@ export const Border = styled.div`
   align-items: center;
   flex-direction: column;
   width: 90%;
-  // height: 450px;
   border-image: linear-gradient(to right, #a445b2, #fa4299) 1;
   border-style: solid;
 `;
@@ -37,8 +35,6 @@ export const Photo = styled.div`
 `;
 
 export const Image = styled.img`
-  // position: relative;
-  // top: -50px;
   margin-top: 50px;
   height: 100px;
   width: 100px;
@@ -58,7 +54,7 @@ export const Button = styled.button`
   border-style: solid;
   border-width: 2px;
   transition: all 0.2s linear;
-  text-decoration:none;
+  text-decoration: none;
 
   &:hover {
     background: -webkit-linear-gradient(left, #a445b2, #fa4299);
@@ -81,14 +77,13 @@ export const EditProfileButton = styled(Button)`
 `;
 
 export const ButtonPosition = styled.div`
-display:flex;
-justify-content:end;
+  display: flex;
+  justify-content: end;
 `;
 
 export const Content = styled.div`
   background: #ededed;
   width: 90%;
-  // height: 100px;
   padding: 10px;
   position: relative;
   top: 30px;
@@ -96,13 +91,9 @@ export const Content = styled.div`
 `;
 
 export const Name = styled.h2`
-  // margin: 0;
-  // text-align: center;
   padding-bottom: 20px;
 `;
 
 export const Email = styled.h3`
-  // margin: 0;
-  // text-align: center;
   padding-bottom: 10px;
 `;

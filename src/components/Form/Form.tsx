@@ -1,5 +1,5 @@
 import React from "react";
-import { InputStyle } from "@/styled/Form.style";
+import { Input } from "@/styled/Form.style";
 import { ErrorStyle } from "@/styled/Error.style";
 
 const Form: React.FC = ({ formik }) => {
@@ -7,21 +7,21 @@ const Form: React.FC = ({ formik }) => {
 
   return (
     <>
-      <InputStyle
+      <Input
         type="text"
         id="name"
         placeholder="Your name"
         {...getFieldProps("name")}
       />
       {touched.name && errors.name && <ErrorStyle>{errors.name}</ErrorStyle>}
-      <InputStyle
+      <Input
         type="email"
         id="email"
         placeholder="Your email address"
         {...getFieldProps("email")}
       />
       {touched.email && errors.email && <ErrorStyle>{errors.email}</ErrorStyle>}
-      <InputStyle
+      <Input
         type="password"
         id="password"
         placeholder="Your password"
@@ -30,7 +30,7 @@ const Form: React.FC = ({ formik }) => {
       {touched.password && errors.password && (
         <ErrorStyle>{errors.password}</ErrorStyle>
       )}
-      <InputStyle
+      <Input
         type="password"
         id="repassword"
         placeholder="Confirm password"

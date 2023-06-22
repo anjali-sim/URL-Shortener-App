@@ -1,6 +1,17 @@
 import React from "react";
-import { Wrapper, FormWrapper, TitleText, SlideControls, Slide1, Slide2, InputWrapper, MainWrap, MainDiv, SignUpDiv } from "@/styled/Form.style";
-import { ButtonSignUpWrapper, Wrap, ButtonStyle } from "./SignUp.style";
+import {
+  Wrapper,
+  FormWrapper,
+  TitleText,
+  SlideControls,
+  Slide1,
+  Slide2,
+  InputWrapper,
+  MainWrap,
+  MainDiv,
+  SignUpDiv,
+} from "@/styled/Form.style";
+import { ButtonSignUpWrapper, Wrap, Button } from "./SignUp.style";
 import { useFormik } from "formik";
 import { validationSchemas } from "@/constants/formValidation";
 import { Link } from "react-router-dom";
@@ -30,7 +41,7 @@ const SignUp: React.FC = () => {
       repassword: "",
     },
     validationSchema: validationSchemas.signup,
-    onSubmit: async (values:SignUpValues) => {
+    onSubmit: async (values: SignUpValues) => {
       try {
         const userCredential = await createUserWithEmailAndPassword(
           auth,
@@ -50,7 +61,6 @@ const SignUp: React.FC = () => {
         if (error.code === "auth/email-already-in-use") {
           showErrorToast("Email is already registered!!!");
         } else {
-          // Handle other errors
           console.log(error);
         }
       }
@@ -83,7 +93,7 @@ const SignUp: React.FC = () => {
               </InputWrapper>
 
               <ButtonSignUpWrapper>
-                <ButtonStyle type="submit">SignUp</ButtonStyle>
+                <Button type="submit">SignUp</Button>
               </ButtonSignUpWrapper>
 
               <MainDiv>

@@ -3,14 +3,14 @@ import {
   Wrapper,
   FormWrapper,
   InputWrapper,
-  InputStyle,
+  Input,
   MainWrap,
   MainDiv,
 } from "@/styled/Form.style";
 import {
   Wrap,
   ButtonWrapper,
-  ButtonStyle,
+  Button,
   SignUpDiv,
   TitleText,
 } from "./ForgotPassword.style";
@@ -52,7 +52,7 @@ const ForgotPassword: React.FC = () => {
               </FormWrapper>
 
               <InputWrapper>
-                <InputStyle
+                <Input
                   type="email"
                   id="email"
                   placeholder="Your email"
@@ -64,7 +64,7 @@ const ForgotPassword: React.FC = () => {
               </InputWrapper>
 
               <ButtonWrapper>
-                <ButtonStyle type="submit">Reset Password</ButtonStyle>
+                <Button type="submit">Reset Password</Button>
               </ButtonWrapper>
 
               <MainDiv>

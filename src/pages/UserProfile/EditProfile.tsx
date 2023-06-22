@@ -2,7 +2,7 @@ import Navbar from '@/components/Navbar';
 import React from 'react'
 import { Container, InputLabel } from './EditProfile.style';
 import { Wrapper } from './ViewProfile.style';
-import { InputStyle, InputWrapper, UpdateProfileButton } from './EditProfile.style';
+import { Input, InputWrapper, UpdateProfileButton } from './EditProfile.style';
 
 const EditProfile:React.FC = () => {
   return (
@@ -12,9 +12,9 @@ const EditProfile:React.FC = () => {
         <Container>
             <InputWrapper>
             <InputLabel>Your Name: </InputLabel>
-            <InputStyle type='text' placeholder='Enter your name to change' />
+            <Input type='text' placeholder='Enter your name to change' />
             <InputLabel>Your Email: </InputLabel>
-            <InputStyle type='text' placeholder='Enter your email to change'/>
+            <Input type='text' placeholder='Enter your email to change'/>
             </InputWrapper>
             <UpdateProfileButton>Update</UpdateProfileButton>
         </Container>

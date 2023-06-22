@@ -8,7 +8,7 @@ const About: React.FC = () => {
     <>
       <Navbar />
       <Wrapper>
-      <Container>
+        <Container>
           LinkZip aka "Text to Marketing" is a product of Canadian corporation
           Zesle Software Inc. LinkZip URL Shortener is a link management
           platform mainly built for Businesses, Universities & Survey Agencies.
@@ -26,7 +26,7 @@ const About: React.FC = () => {
           us. Thanks for taking the time to visit our website! Questions? Shoot
           an email at support@linkzip.com. We promise we will get back to you
           within one business day. Till then, Happy URL Shortening!
-      </Container>
+        </Container>
       </Wrapper>
       <Footer />
     </>

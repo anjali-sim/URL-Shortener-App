@@ -30,7 +30,7 @@ export const Heading = styled.h1`
   }
 `;
 
-export const SpanStyle = styled.span`
+export const Span = styled.span`
   color: #f99f38;
 `;
 
@@ -42,7 +42,7 @@ export const InputContainer = styled.div`
   margin-bottom: 2rem;
 `;
 
-export const InputStyle = styled.input`
+export const Input = styled.input`
   width: 100%;
   padding: 0.5rem 0.2rem 0.5rem 0;
   text-indent: 1rem;
@@ -61,7 +61,7 @@ export const InputStyle = styled.input`
   }
 `;
 
-export const ButtonStyle = styled.button`
+export const Button = styled.button`
   padding: 0 1rem;
   height: 3rem;
   font-size: 0.8rem;

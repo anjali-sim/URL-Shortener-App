@@ -5,11 +5,11 @@ import Footer from "@/components/Footer";
 
 const MainPage: React.FC = () => {
   return (
-    <div>
+    <>
       <Navbar />
       <Banner />
       <Footer />
-    </div>
+    </>
   );
 };
 
