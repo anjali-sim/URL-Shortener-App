@@ -1,8 +1,12 @@
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
-// For specifying the type of the toast message 
+// for specifying the type of the toast message 
 type ToastMessage = string;
+
+export const errorMessage = "Invalid Username or Password!!!";
+export const emailErrorMessage = "Email is already registered!!!";
+export const successMessage = "Password reset email sent successfully!!!";
 
 // for showing error toast notification
 export const showErrorToast = (message: ToastMessage) => {

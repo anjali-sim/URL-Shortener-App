@@ -19,7 +19,7 @@ import { Link } from "react-router-dom";
 import { sendPasswordResetEmail } from "firebase/auth";
 import { auth } from "@/utils/firebase";
 import { useFormik } from "formik";
-import { showSuccessToast } from "@/utils/toast";
+import { showSuccessToast, successMessage } from "@/utils/toast";
 import { validationSchemas } from "@/constants/formValidation";
 
 const ForgotPassword: React.FC = () => {
@@ -32,7 +32,7 @@ const ForgotPassword: React.FC = () => {
     onSubmit: async (values) => {
       try {
         await sendPasswordResetEmail(auth, values.email);
-        showSuccessToast("Password reset email sent successfully!!!");
+        showSuccessToast(successMessage);
       } catch (error) {
         console.log(error);
       }
@@ -40,7 +40,7 @@ const ForgotPassword: React.FC = () => {
   });
 
   return (
-    <div>
+    <>
       <form onSubmit={formik.handleSubmit}>
         <MainWrap>
           <Wrap>
@@ -77,7 +77,7 @@ const ForgotPassword: React.FC = () => {
           </Wrap>
         </MainWrap>
       </form>
-    </div>
+    </>
   );
 };
 

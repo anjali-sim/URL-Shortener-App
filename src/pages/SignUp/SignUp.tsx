@@ -20,7 +20,7 @@ import { createUserWithEmailAndPassword } from "firebase/auth";
 import { collection, addDoc } from "firebase/firestore";
 import { db } from "@/utils/firebase";
 import { useNavigate } from "react-router-dom";
-import { showErrorToast } from "@/utils/toast";
+import { showErrorToast, emailErrorMessage } from "@/utils/toast";
 import Form from "@/components/Form/Form";
 
 interface SignUpValues {
@@ -59,7 +59,7 @@ const SignUp: React.FC = () => {
       } catch (error) {
         // Handle the case when the email address is already in use
         if (error.code === "auth/email-already-in-use") {
-          showErrorToast("Email is already registered!!!");
+          showErrorToast(emailErrorMessage);
         } else {
           console.log(error);
         }
@@ -68,7 +68,7 @@ const SignUp: React.FC = () => {
   });
 
   return (
-    <div>
+    <>
       <form onSubmit={formik.handleSubmit}>
         <MainWrap>
           <Wrap>
@@ -106,7 +106,7 @@ const SignUp: React.FC = () => {
           </Wrap>
         </MainWrap>
       </form>
-    </div>
+    </>
   );
 };
 

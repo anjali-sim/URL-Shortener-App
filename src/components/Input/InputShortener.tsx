@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import UrlImage from "../../assets/images/url.png"
 import {
   Heading,
   InputContainer,
@@ -10,7 +11,6 @@ import {
   Image,
   ResultDiv
 } from "./Input.style";
-import url from "@/assets/images/url.png";
 import axios from "axios";
 
 const InputShortener: React.FC = () => {
@@ -46,7 +46,7 @@ const InputShortener: React.FC = () => {
               onChange={(e) => setUrl(e.target.value)}
             />
             <Button>
-              <Image src={url} />
+              <Image src={UrlImage} alt="url" />
             </Button>
           </InputDiv>
         </form>

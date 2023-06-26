@@ -26,7 +26,7 @@ import { signInWithEmailAndPassword } from "firebase/auth";
 import { ErrorStyle } from "@/styled/Error.style";
 import { useFormik } from "formik";
 import { validationSchemas } from "@/constants/formValidation";
-import { showErrorToast } from "@/utils/toast";
+import { showErrorToast, errorMessage } from "@/utils/toast";
 import { Rings } from "react-loader-spinner";
 
 const Login: React.FC = () => {
@@ -56,15 +56,17 @@ const Login: React.FC = () => {
         IsLoading(false);
         navigate("/");
       } catch (error) {
+        // console.log(error);
+        
         setError(error.message);
-        showErrorToast("Invalid Username or Password!!!");
+        showErrorToast(errorMessage);
         IsLoading(false);
       }
     },
   });
 
   return (
-    <div>
+    <>
       {loading ? (
         <LoaderContainer>
           <Rings color="#000000" height={100} width={100}></Rings>
@@ -132,7 +134,7 @@ const Login: React.FC = () => {
           </MainWrap>
         </form>
       )}
-    </div>
+    </>
   );
 };
 

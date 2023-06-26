@@ -20,7 +20,7 @@ import {
   EditPhotoButton,
   EditProfileButton,
   ButtonPosition,
-} from "./ViewProfile.style";
+} from "./UserProfile";
 import profile from "@/assets/images/profile.png";
 import { Link } from "react-router-dom";
 
@@ -29,7 +29,7 @@ interface User {
   email: string;
 }
 
-const Profile: React.FC = () => {
+const UserProfile: React.FC = () => {
   const [user, setUser] = useState<User | null>(null);
 
   useEffect(() => {
@@ -95,4 +95,4 @@ const Profile: React.FC = () => {
   );
 };
 
-export default Profile;
+export default UserProfile;
