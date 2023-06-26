@@ -12,22 +12,15 @@ import {
   MainWrap,
   SignUpDiv,
 } from "@/styled/Form.style";
-import {
-  ButtonWrapper,
-  Text,
-  Wrap,
-  Button,
-  LoaderContainer,
-  TextDiv
-} from "./Login.style";
+import { ButtonWrapper, Text, Wrap, Button, TextDiv } from "./Login.style";
 import { Link, useNavigate } from "react-router-dom";
-import { auth } from "@/utils/firebase";
+import { auth } from "@/service/firebaseConfig";
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { ErrorStyle } from "@/styled/Error.style";
 import { useFormik } from "formik";
 import { validationSchemas } from "@/constants/formValidation";
 import { showErrorToast, errorMessage } from "@/utils/toast";
-import { Rings } from "react-loader-spinner";
+import Loader from "@/components/Loader/Loader";
 
 const Login: React.FC = () => {
   const [error, setError] = useState("");
@@ -56,8 +49,6 @@ const Login: React.FC = () => {
         IsLoading(false);
         navigate("/");
       } catch (error) {
-        // console.log(error);
-        
         setError(error.message);
         showErrorToast(errorMessage);
         IsLoading(false);
@@ -68,9 +59,7 @@ const Login: React.FC = () => {
   return (
     <>
       {loading ? (
-        <LoaderContainer>
-          <Rings color="#000000" height={100} width={100}></Rings>
-        </LoaderContainer>
+        <Loader />
       ) : (
         <form onSubmit={formik.handleSubmit}>
           <MainWrap>
@@ -112,10 +101,10 @@ const Login: React.FC = () => {
                     <ErrorStyle>{formik.errors.password}</ErrorStyle>
                   )}
 
-                <TextDiv>
-                  <Text as={Link} to="/forgot-password">
-                    Forgot Password?
-                  </Text>
+                  <TextDiv>
+                    <Text as={Link} to="/forgot-password">
+                      Forgot Password?
+                    </Text>
                   </TextDiv>
                 </InputWrapper>
 

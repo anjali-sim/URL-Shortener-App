@@ -3,17 +3,17 @@ import UrlImage from "../../assets/images/url.png"
 import {
   Heading,
   InputContainer,
-  Input,
+  InputTag,
   Span,
   Button,
   InputDiv,
   Paragraph,
   Image,
-  ResultDiv
+  ResultDiv,
 } from "./Input.style";
 import axios from "axios";
 
-const InputShortener: React.FC = () => {
+const Input: React.FC = () => {
   const [url, setUrl] = useState("");
   const [shortenedUrl, setShortenedUrl] = useState("");
 
@@ -39,7 +39,7 @@ const InputShortener: React.FC = () => {
         <Paragraph>Sure, LinkZip will do that at a mouse click.</Paragraph>
         <form onSubmit={handleShortenUrl}>
           <InputDiv>
-            <Input
+            <InputTag
               type="text"
               placeholder="Paste a link to shorten it"
               value={url}
@@ -60,4 +60,4 @@ const InputShortener: React.FC = () => {
   );
 };
 
-export default InputShortener;
+export default Input;

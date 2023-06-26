@@ -9,7 +9,7 @@ import {
 } from "./ToggleMenu.style";
 import { signOut, onAuthStateChanged } from "firebase/auth";
 import { Link, useNavigate } from "react-router-dom";
-import { auth } from "@/utils/firebase";
+import { auth } from "@/service/firebaseConfig";
 
 const Navbar: React.FC = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);

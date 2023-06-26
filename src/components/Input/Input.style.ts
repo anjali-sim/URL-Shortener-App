@@ -42,7 +42,7 @@ export const InputContainer = styled.div`
   margin-bottom: 2rem;
 `;
 
-export const Input = styled.input`
+export const InputTag = styled.input`
   width: 100%;
   padding: 0.5rem 0.2rem 0.5rem 0;
   text-indent: 1rem;

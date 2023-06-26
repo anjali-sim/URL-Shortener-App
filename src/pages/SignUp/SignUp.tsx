@@ -15,13 +15,13 @@ import { ButtonSignUpWrapper, Wrap, Button } from "./SignUp.style";
 import { useFormik } from "formik";
 import { validationSchemas } from "@/constants/formValidation";
 import { Link } from "react-router-dom";
-import { auth } from "@/utils/firebase";
+import { auth, db } from "@/service/firebaseConfig";
 import { createUserWithEmailAndPassword } from "firebase/auth";
 import { collection, addDoc } from "firebase/firestore";
-import { db } from "@/utils/firebase";
 import { useNavigate } from "react-router-dom";
 import { showErrorToast, emailErrorMessage } from "@/utils/toast";
 import Form from "@/components/Form/Form";
+import { emailAlreadyInUseMessage } from "@/constants/firebase";
 
 interface SignUpValues {
   name: string;
@@ -58,7 +58,7 @@ const SignUp: React.FC = () => {
         navigate("/login");
       } catch (error) {
         // Handle the case when the email address is already in use
-        if (error.code === "auth/email-already-in-use") {
+        if (error.code === emailAlreadyInUseMessage) {
           showErrorToast(emailErrorMessage);
         } else {
           console.log(error);

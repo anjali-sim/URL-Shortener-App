@@ -43,12 +43,6 @@ export const Wrap = styled.div`
   }
 `;
 
-export const LoaderContainer = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-`;
-
 export const TextDiv = styled.div`
   margin-top: 18px;
 `;

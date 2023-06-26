@@ -1,3 +1,3 @@
-import InputShortener from "./InputShortener";
+import Input from "./Input";
 
-export default InputShortener;
+export default Input;

@@ -17,7 +17,7 @@ import {
 import { ErrorStyle } from "@/styled/Error.style";
 import { Link } from "react-router-dom";
 import { sendPasswordResetEmail } from "firebase/auth";
-import { auth } from "@/utils/firebase";
+import { auth } from "@/service/firebaseConfig";
 import { useFormik } from "formik";
 import { showSuccessToast, successMessage } from "@/utils/toast";
 import { validationSchemas } from "@/constants/formValidation";
