@@ -56,6 +56,10 @@ export const InputTag = styled.input`
     font-size: 0.9rem;
   }
 
+  &:hover{ 
+    background-color: #E5E4E2;
+  }
+
   @media (max-width: 500px) {
     padding: 0.2rem 0.1rem 0.2rem 0;
   }

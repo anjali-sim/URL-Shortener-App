@@ -84,7 +84,7 @@ const Navbar: React.FC = () => {
                     User Profile
                   </DropdownButton>
                   <DropdownContent open={isOpen}>
-                    <DropdownItem as={Link} to="/view-profile">
+                    <DropdownItem as={Link} to="/user-profile">
                       View Profile
                     </DropdownItem>
                     <DropdownItem as={Link} to="/edit-profile">
