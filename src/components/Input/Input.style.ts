@@ -105,6 +105,11 @@ export const Image = styled.img`
 
 export const ResultDiv = styled.div`
   display: flex;
-  width: 50%;
+  // width: 50%;
+  margin-left: 25px;
+  width: 100%;
+  justify-content: center;
+  // align-items:center;
 `;
+
 

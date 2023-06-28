@@ -1,74 +1,6 @@
-// import React, { useState } from "react";
-// import UrlImage from "@/assets/images/url.png"
-// import {
-//   Heading,
-//   InputContainer,
-//   InputTag,
-//   Span,
-//   Button,
-//   InputDiv,
-//   Paragraph,
-//   Image,
-//   ResultDiv,
-// } from "./Input.style";
-// import axios from "axios"; 
-
-// const Input: React.FC = () => {
-//   const [url, setUrl] = useState("");
-//   const [shortenedUrl, setShortenedUrl] = useState("");
-
-//   const handleShortenUrl = async (e) => {
-//     e.preventDefault();
-//     try {
-//       const response = await axios.get(
-//         `https://api.shrtco.de/v2/shorten?url=${url}`
-//       );
-//       const data = response.data;
-//       setShortenedUrl(data.result.full_short_link);
-//     } catch (error) {
-//       console.error(error);
-//     }
-//   };
-
-//   return (
-//     <>
-//       <InputContainer>
-//         <Heading>
-//           SHORTENING YOUR <Span>URL?</Span>
-//         </Heading>
-//         <Paragraph>Sure, LinkZip will do that at a mouse click.</Paragraph>
-//         <form onSubmit={handleShortenUrl}>
-//           <InputDiv>
-//             <InputTag
-//               type="text"
-//               placeholder="Paste a link to shorten it"
-//               value={url}
-//               onChange={(e) => setUrl(e.target.value)}
-//             />
-//             <Button>
-//               <Image src={UrlImage} alt="url" />
-//             </Button>
-//           </InputDiv>
-//         </form>
-//         {shortenedUrl && (
-//           <ResultDiv>
-//             <p>Shortened URL: {shortenedUrl}</p>
-//           </ResultDiv>
-//         )}
-//       </InputContainer>
-//     </>
-//   );
-// };
-
-// export default Input;
-
-
-
-
-
-
-import React, { useState } from "react";
-import UrlImage from "@/assets/images/url.png"
+import React, { useState, useRef } from "react";
+import UrlImage from "@/assets/images/url.png";
+import Copy from "@/assets/images/document.png";
 import {
   Heading,
   InputContainer,
@@ -77,32 +9,42 @@ import {
   Button,
   InputDiv,
   Paragraph,
-  Image
+  Image,
+  ResultDiv,
 } from "./Input.style";
 import { v4 as uuidv4 } from "uuid";
-import { useNavigate } from "react-router-dom";
-import { db } from "@/service/firebaseConfig";
 import { collection, addDoc } from "firebase/firestore";
-
+import { db } from "@/service/firebaseConfig";
 
 const Input: React.FC = () => {
-  const navigate = useNavigate();
   const [url, setUrl] = useState("");
-  const [shortenedCode, setShortenedCode] = useState(null);
+  const [shortenedUrl, setShortenedUrl] = useState("");
+  const shortenedUrlRef = useRef<HTMLInputElement>(null);
 
-  const handleShortenUrl = async (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    let code = uuidv4();
+  const handleSubmit = async (event: React.FormEvent) => {
+    event.preventDefault();
 
     try {
-      await addDoc(collection(db, "urls"), {
-        url: url,
-        code: code,
+      const id = uuidv4();
+      const docRef = await addDoc(collection(db, "urls"), {
+        id,
+        originalUrl: url,
+        shortUrl: `${window.location.origin}/${id}`,
+        createdAt: new Date().toISOString(),
       });
 
-      setShortenedCode(code);
+      const shortenedId = docRef.id;
+      const shortenedUrl = `${window.location.origin}/${shortenedId}`;
+      setShortenedUrl(shortenedUrl);
     } catch (error) {
-      console.error("Error adding document: ", error);
+      console.error("Error creating shortened URL:", error);
+    }
+  };
+
+  const copyToClipboard = () => {
+    if (shortenedUrlRef.current) {
+      shortenedUrlRef.current.select();
+      document.execCommand("copy");
     }
   };
 
@@ -113,7 +55,8 @@ const Input: React.FC = () => {
           SHORTENING YOUR <Span>URL?</Span>
         </Heading>
         <Paragraph>Sure, LinkZip will do that at a mouse click.</Paragraph>
-        <form onSubmit={handleShortenUrl}>
+
+        <form onSubmit={handleSubmit}>
           <InputDiv>
             <InputTag
               type="text"
@@ -125,12 +68,23 @@ const Input: React.FC = () => {
               <Image src={UrlImage} alt="url" />
             </Button>
           </InputDiv>
+
+          {shortenedUrl && (
+            <ResultDiv>
+              <InputTag
+                type="text"
+                ref={shortenedUrlRef}
+                value={shortenedUrl}
+                readOnly
+              />
+              <Button type="button" onClick={copyToClipboard}>
+                <Image src={Copy} />
+              </Button>
+            </ResultDiv>
+          )}
         </form>
-        
       </InputContainer>
-      
     </>
   );
 };
-
 export default Input;

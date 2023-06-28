@@ -8,8 +8,9 @@ import ForgotPassword from "@/pages/ForgotPassword/ForgotPassword";
 import UserProfile from "@/pages/UserProfile/UserProfile.tsx";
 import UserProfileForm from "@/pages/UserProfile/UserProfileForm.tsx";
 import About from "@/pages/About/About.tsx";
-import PublicRoute from "@/Routes/PublicRoute";
-import PrivateRoute from "@/Routes/PrivateRoute";
+// import PublicRoute from "@/Routes/PublicRoute";
+// import PrivateRoute from "@/Routes/PrivateRoute";
+import ShortenedUrlRedirect from "./components/Input/ShortenedUrlRedirect";
 
 const App: React.FC = () => {
   return (
@@ -21,6 +22,7 @@ const App: React.FC = () => {
             <Route path="/login" element={<Login />} />
             <Route path="/signup" element={<SignUp />} />
             <Route path="/forgot-password" element={<ForgotPassword />} />
+            <Route path="/:shortenedId" element={<ShortenedUrlRedirect />} />
             <Route path="/user-profile" element={<UserProfile />} />
             <Route path="/edit-profile" element={<UserProfileForm />} />
             <Route path="/about" element={<About />} />
