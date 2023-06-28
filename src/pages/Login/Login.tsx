@@ -18,7 +18,8 @@ import { auth, signInWithEmailAndPassword } from "@/service/firebaseConfig";
 import { ErrorStyle } from "@/styled/Error.style";
 import { useFormik } from "formik";
 import { validationSchemas } from "@/constants/formValidation";
-import { showErrorToast, errorMessage } from "@/utils/toast";
+import { showErrorToast } from "@/utils/toast";
+import { errorMessage } from "@/constants/toastMessages";
 import Loader from "@/components/Loader/Loader";
 
 const Login: React.FC = () => {

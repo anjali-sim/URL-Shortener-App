@@ -23,7 +23,8 @@ import {
   addDoc,
 } from "@/service/firebaseConfig";
 import { useNavigate } from "react-router-dom";
-import { showErrorToast, emailErrorMessage } from "@/utils/toast";
+import { showErrorToast } from "@/utils/toast";
+import { emailErrorMessage } from "@/constants/toastMessages";
 import Form from "@/components/Form/Form";
 import { emailAlreadyInUseMessage } from "@/constants/firebase";
 

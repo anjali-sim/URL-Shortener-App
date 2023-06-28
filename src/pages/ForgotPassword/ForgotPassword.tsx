@@ -18,7 +18,8 @@ import { ErrorStyle } from "@/styled/Error.style";
 import { Link } from "react-router-dom";
 import { auth, sendPasswordResetEmail } from "@/service/firebaseConfig";
 import { useFormik } from "formik";
-import { showSuccessToast, successMessage } from "@/utils/toast";
+import { showSuccessToast } from "@/utils/toast";
+import { successMessage } from "@/constants/toastMessages";
 import { validationSchemas } from "@/constants/formValidation";
 
 const ForgotPassword: React.FC = () => {

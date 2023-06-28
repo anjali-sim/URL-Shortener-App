@@ -1,6 +1,6 @@
-import React, { useState, useRef } from "react";
-import UrlImage from "@/assets/images/url.png";
-import Copy from "@/assets/images/document.png";
+import React, { useState, useRef } from 'react';
+import UrlImage from '@/assets/images/url.png';
+import Copy from '@/assets/images/document.png';
 import {
   Heading,
   InputContainer,
@@ -11,13 +11,15 @@ import {
   Paragraph,
   Image,
   ResultDiv,
-} from "./Input.style";
-import { v4 as uuidv4 } from "uuid";
-import { db, collection, addDoc } from "@/service/firebaseConfig";
+} from './Input.style';
+import { v4 as uuidv4 } from 'uuid';
+import { db, collection, addDoc } from '@/service/firebaseConfig';
+import {showErrorToast, showInfoToast } from '@/utils/toast';
+import { clipboardErrorMessage, infoMessage } from '@/constants/toastMessages';
 
 const Input: React.FC = () => {
-  const [url, setUrl] = useState("");
-  const [shortenedUrl, setShortenedUrl] = useState("");
+  const [url, setUrl] = useState('');
+  const [shortenedUrl, setShortenedUrl] = useState('');
   const shortenedUrlRef = useRef<HTMLInputElement>(null);
 
   const handleSubmit = async (event: React.FormEvent) => {
@@ -25,7 +27,7 @@ const Input: React.FC = () => {
 
     try {
       const id = uuidv4();
-      const docRef = await addDoc(collection(db, "urls"), {
+      const docRef = await addDoc(collection(db, 'urls'), {
         id,
         originalUrl: url,
         shortUrl: `${window.location.origin}/${id}`,
@@ -36,14 +38,23 @@ const Input: React.FC = () => {
       const shortenedUrl = `${window.location.origin}/${shortenedId}`;
       setShortenedUrl(shortenedUrl);
     } catch (error) {
-      console.error("Error creating shortened URL:", error);
+      console.error('Error creating shortened URL:', error);
     }
   };
 
-  const copyToClipboard = () => {
+  const handleCopyToClipboard = async () => {
     if (shortenedUrlRef.current) {
-      shortenedUrlRef.current.select();
-      document.execCommand("copy");
+      try {
+        await navigator.clipboard.write([
+          new ClipboardItem({
+            'text/plain': new Blob([shortenedUrlRef.current.value], { type: 'text/plain' }),
+          }),
+        ]);
+        showInfoToast(infoMessage);
+      } catch (error) {
+        console.error('Error copying to clipboard:', error);
+        showErrorToast(clipboardErrorMessage);
+      }
     }
   };
 
@@ -70,13 +81,8 @@ const Input: React.FC = () => {
 
           {shortenedUrl && (
             <ResultDiv>
-              <InputTag
-                type="text"
-                ref={shortenedUrlRef}
-                value={shortenedUrl}
-                readOnly
-              />
-              <Button type="button" onClick={copyToClipboard}>
+              <InputTag type="text" ref={shortenedUrlRef} value={shortenedUrl} readOnly />
+              <Button type="button" onClick={handleCopyToClipboard}>
                 <Image src={Copy} />
               </Button>
             </ResultDiv>
@@ -86,4 +92,5 @@ const Input: React.FC = () => {
     </>
   );
 };
+
 export default Input;
