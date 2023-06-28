@@ -15,9 +15,13 @@ import { ButtonSignUpWrapper, Wrap, Button } from "./SignUp.style";
 import { useFormik } from "formik";
 import { validationSchemas } from "@/constants/formValidation";
 import { Link } from "react-router-dom";
-import { auth, db } from "@/service/firebaseConfig";
-import { createUserWithEmailAndPassword } from "firebase/auth";
-import { collection, addDoc } from "firebase/firestore";
+import {
+  auth,
+  db,
+  createUserWithEmailAndPassword,
+  collection,
+  addDoc,
+} from "@/service/firebaseConfig";
 import { useNavigate } from "react-router-dom";
 import { showErrorToast, emailErrorMessage } from "@/utils/toast";
 import Form from "@/components/Form/Form";

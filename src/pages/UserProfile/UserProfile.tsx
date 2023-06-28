@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from "react";
-import { auth } from "@/service/firebaseConfig";
 import {
-  getFirestore,
+  auth,
+  db,
   collection,
   getDocs,
   query,
   where,
-} from "firebase/firestore";
+} from "@/service/firebaseConfig";
 import Navbar from "@/components/Navbar";
 import {
   Wrapper,
@@ -35,8 +35,7 @@ const UserProfile: React.FC = () => {
   useEffect(() => {
     const unsubscribe = auth.onAuthStateChanged((user) => {
       if (user) {
-        const firestore = getFirestore();
-        const usersCollectionRef = collection(firestore, "users");
+        const usersCollectionRef = collection(db, "users");
         const userQuery = query(
           usersCollectionRef,
           where("uid", "==", user.uid)

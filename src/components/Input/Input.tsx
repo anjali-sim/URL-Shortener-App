@@ -13,8 +13,7 @@ import {
   ResultDiv,
 } from "./Input.style";
 import { v4 as uuidv4 } from "uuid";
-import { collection, addDoc } from "firebase/firestore";
-import { db } from "@/service/firebaseConfig";
+import { db, collection, addDoc } from "@/service/firebaseConfig";
 
 const Input: React.FC = () => {
   const [url, setUrl] = useState("");

@@ -14,8 +14,7 @@ import {
 } from "@/styled/Form.style";
 import { ButtonWrapper, Text, Wrap, Button, TextDiv } from "./Login.style";
 import { Link, useNavigate } from "react-router-dom";
-import { auth } from "@/service/firebaseConfig";
-import { signInWithEmailAndPassword } from "firebase/auth";
+import { auth, signInWithEmailAndPassword } from "@/service/firebaseConfig";
 import { ErrorStyle } from "@/styled/Error.style";
 import { useFormik } from "formik";
 import { validationSchemas } from "@/constants/formValidation";

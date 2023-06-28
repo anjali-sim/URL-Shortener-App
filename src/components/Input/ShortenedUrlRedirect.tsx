@@ -1,6 +1,5 @@
 import React, { useEffect } from 'react';
-import { db } from '@/service/firebaseConfig';
-import { doc, getDoc } from 'firebase/firestore';
+import { db, doc, getDoc } from '@/service/firebaseConfig';
 import { useNavigate } from 'react-router-dom';
 
 const ShortenedUrlRedirect: React.FC = () => {
