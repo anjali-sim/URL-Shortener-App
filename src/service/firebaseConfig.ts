@@ -16,6 +16,9 @@ import {
   getDocs,
   query,
   where,
+  updateDoc,
+  setDoc,
+  onSnapshot
 } from "firebase/firestore";
 import {
   API_KEY,
@@ -57,4 +60,7 @@ export {
   sendPasswordResetEmail,
   signInWithEmailAndPassword,
   createUserWithEmailAndPassword,
+  updateDoc,
+  setDoc,
+  onSnapshot
 };

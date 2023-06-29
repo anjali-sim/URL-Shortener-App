@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import {
   auth,
   db,
   collection,
-  getDocs,
   query,
   where,
+  onSnapshot,
 } from "@/service/firebaseConfig";
 import Navbar from "@/components/Navbar";
 import {
@@ -20,9 +21,8 @@ import {
   EditPhotoButton,
   EditProfileButton,
   ButtonPosition,
-} from "./UserProfile";
+} from "./UserProfile.style";
 import profile from "@/assets/images/profile.png";
-import { Link } from "react-router-dom";
 
 interface User {
   name: string;
@@ -33,33 +33,25 @@ const UserProfile: React.FC = () => {
   const [user, setUser] = useState<User | null>(null);
 
   useEffect(() => {
-    const unsubscribe = auth.onAuthStateChanged((user) => {
-      if (user) {
-        const usersCollectionRef = collection(db, "users");
-        const userQuery = query(
-          usersCollectionRef,
-          where("uid", "==", user.uid)
-        );
+    const currentUser = auth.currentUser;
+    if (currentUser) {
+      const usersCollectionRef = collection(db, "users");
+      const userQuery = query(
+        usersCollectionRef,
+        where("uid", "==", currentUser.uid)
+      );
 
-        getDocs(userQuery)
-          .then((snapshot) => {
-            if (!snapshot.empty) {
-              const userData = snapshot.docs[0].data() as User;
+      const unsubscribe = onSnapshot(userQuery, (snapshot) => {
+        if (!snapshot.empty) {
+          const userData = snapshot.docs[0].data() as User;
+          setUser(userData);
+        } else {
+          console.log("User data not found");
+        }
+      });
 
-              setUser(userData);
-            } else {
-              console.log("User data not found");
-            }
-          })
-          .catch((error) => {
-            console.log("Error retrieving user data:", error);
-          });
-      } else {
-        setUser(null);
-      }
-    });
-
-    return () => unsubscribe();
+      return () => unsubscribe();
+    }
   }, []);
 
   return (
@@ -70,7 +62,7 @@ const UserProfile: React.FC = () => {
           <Container>
             <Border>
               <Photo>
-                <Image src={profile} alt="User"></Image>
+                <Image src={profile} alt="User" />
                 <EditPhotoButton>+ Upload Photo</EditPhotoButton>
               </Photo>
               <Content>
